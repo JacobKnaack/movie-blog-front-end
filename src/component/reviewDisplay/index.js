@@ -105,15 +105,17 @@ class ReviewDisplay extends React.Component {
     }
 
     return (
-      <Card className={reviewClasses} onClick={this.toggleSelect}>
-        <CardMedia>
-          <img src={this.props.image} alt=''/>
-        </CardMedia>
-        <CardTitle
-          className='movieTitle'
-          title={this.props.title}
-          subtitle={this.props.release}
-        />
+      <Card className={reviewClasses}>
+        <div onClick={this.toggleSelect}>
+          <CardMedia>
+            <img src={this.props.image} alt=''/>
+          </CardMedia>
+          <CardTitle
+            className='movieTitle'
+            title={this.props.title}
+            subtitle={this.props.release}
+          />
+        </div>
         {reviewerSections}
       </Card>
     )
