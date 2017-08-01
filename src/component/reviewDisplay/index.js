@@ -1,7 +1,9 @@
 import React from 'react'
+import marked from 'marked'
 import { Card, CardHeader, CardText, CardTitle, CardMedia } from 'material-ui/Card'
+import Divider from 'material-ui/Divider'
 import IconButton from 'material-ui/IconButton'
-import Close from 'material-ui/svg-icons/navigation/close'
+import Close from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
 import './reviewDisplay.css'
 
 class ReviewDisplay extends React.Component {
@@ -14,7 +16,33 @@ class ReviewDisplay extends React.Component {
     this.toggleSelect = this.toggleSelect.bind(this)
   }
 
-  toggleSelect () {
+  componentWillMount () {
+    fetch(this.props.jacobReview)
+      .then(response => {
+        return response.text()
+      })
+      .then(text => {
+        this.setState({ jacobMarkdown: marked(text) })
+      })
+
+    fetch(this.props.meganReview)
+      .then(response => {
+        return response.text()
+      })
+      .then(text => {
+        this.setState({ meganMarkdown: marked(text) })
+      })
+
+    fetch(this.props.ivanReview)
+      .then(response => {
+        return response.text()
+      })
+      .then(text => {
+        this.setState({ ivanMarkdown: marked(text) })
+      })
+  }
+
+  toggleSelect() {
     this.setState({ selected: !this.state.selected })
   }
 
@@ -32,32 +60,41 @@ class ReviewDisplay extends React.Component {
           >
             <Close/>
           </IconButton>
-          <CardHeader
-            className='reviewHeading'
-            title={this.props.movie.jacob.author}
-            subtitle={this.props.movie.jacob.title}
-          />
-          <CardText className='reviewTxt'>
-            {this.props.movie.jacob.text}
-          </CardText>
+          <Divider className='reviewDivider'/>
 
           <CardHeader
             className='reviewHeading'
-            title={this.props.movie.megan.author}
-            subtitle={this.props.movie.megan.title}
+            title='Jacob'
+            subtitle={this.props.jacob.title}
           />
-          <CardText className='reviewTxt'>
-            {this.props.movie.megan.text}
-          </CardText>
+          <CardText
+            className='reviewTxt'
+            dangerouslySetInnerHTML={{__html: this.state.jacobMarkdown}}
+          />
+
+        <Divider inset={ true }/>
 
           <CardHeader
             className='reviewHeading'
-            title={this.props.movie.ivan.author}
-            subtitle={this.props.movie.ivan.title}
+            title='Megan'
+            subtitle={this.props.megan.title}
           />
-          <CardText className='reviewTxt'>
-            {this.props.movie.ivan.text}
-          </CardText>
+          <CardText
+            className='reviewTxt'
+            dangerouslySetInnerHTML={{__html: this.state.meganMarkdown}}
+          />
+
+        <Divider inset={ true }/>
+
+          <CardHeader
+            className='reviewHeading'
+            title='Evaughn'
+            subtitle={this.props.ivan.title}
+          />
+          <CardText
+            className='reviewTxt'
+            dangerouslySetInnerHTML={{__html: this.state.ivanMarkdown}}
+          />
         </div>
       )
     } else {
@@ -70,12 +107,12 @@ class ReviewDisplay extends React.Component {
     return (
       <Card className={reviewClasses} onClick={this.toggleSelect}>
         <CardMedia>
-          <img src={this.props.image} alt={this.props.movie.title}/>
+          <img src={this.props.image} alt=''/>
         </CardMedia>
         <CardTitle
           className='movieTitle'
-          title={this.props.movie.title}
-          subtitle={this.props.movie.release}
+          title={this.props.title}
+          subtitle={this.props.release}
         />
         {reviewerSections}
       </Card>
