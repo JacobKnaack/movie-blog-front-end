@@ -1,6 +1,6 @@
-#Sick Flick Nit Pickers
+# Sick Flick Nit Pickers
 
-##A Movie Blog
+## A Movie Blog
 
 *Built with create-react-app*
 

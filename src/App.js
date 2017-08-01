@@ -15,7 +15,7 @@ class App extends Component {
           <main id='homeContainer'>
             <div id='heading'>
               <h1>Sick Flick Nit Pickers</h1>
-              <h4>Movie Reviews by Jacob, Ivan and Megan</h4>
+              <h4>Movie Reviews by Jacob, Evaughn and Megan</h4>
             </div>
             <section id='reviews'>
               <ul id='movieList'>
