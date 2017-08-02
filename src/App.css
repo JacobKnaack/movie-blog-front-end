@@ -68,8 +68,13 @@ p, h1, h2, h3, h4, h5 {
 }
 
 @media(max-width: 700px) {
-  h1 {
+  #mainHeading {
+    margin-top: 100px;
     font-size: 50px;
+  }
+
+  #mainSubtitle {
+    margin-top: 0;
   }
 
   #movieList li {

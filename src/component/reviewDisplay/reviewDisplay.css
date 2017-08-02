@@ -46,4 +46,12 @@
     width: 100vw;
     height: auto;
   }
+
+  .movieTitle {
+    padding: 5px !important;
+  }
+
+  .movieTitle span {
+    font-size: 20px !important;
+  }
 }
