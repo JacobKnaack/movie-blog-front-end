@@ -11,6 +11,7 @@ import meganInfo from './asset/content/megan/index.json'
 import meganValerianReview from './asset/content/megan/valerian.md'
 
 import ValerianImage from './asset/img/ValerianImage.jpg'
+import WelcomeGraphic from './asset/img/welcome-graphic.svg'
 import ReviewDisplay from './component/reviewDisplay'
 import './App.css'
 
@@ -24,8 +25,9 @@ class App extends Component {
         <div className="App">
           <main id='homeContainer'>
             <div id='heading'>
-              <h1>Sick   Flick   Nit   Pickers</h1>
-              <h4>Movie Reviews by Jacob, Evaughn and Megan</h4>
+              <img id='welcomeImg' src={WelcomeGraphic}/>
+              <h1 id='mainHeading'>Sick Flick Nit Pickers</h1>
+              <h4 id='mainSubtitle'>Movie Reviews by Jacob, Evaughn and Megan</h4>
             </div>
             <section id='reviews'>
               <ul id='movieList'>
