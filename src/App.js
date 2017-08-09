@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import AddReview from 'material-ui/svg-icons/content/add'
 
 import jacobInfo from './asset/content/jacob/index.json'
 import jacobValerianReview from './asset/content/jacob/valerian.md'
@@ -46,6 +48,9 @@ class App extends Component {
                 </li>
               </ul>
             </section>
+            <FloatingActionButton id='addReviewBttn'>
+              <AddReview />
+            </FloatingActionButton>
           </main>
         </div>
       </MuiThemeProvider>

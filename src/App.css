@@ -18,6 +18,24 @@ body {
   font-size: large;
 }
 
+p, {
+  font-family: 'Roboto', sans-serif;
+}
+
+.reviewHeading {
+  font-family: 'Saira', sans-serif;
+  font-weight: 900 !important;
+}
+
+.reviewHeading span:nth-child(2) {
+  font-weight: 600 !important;
+}
+
+p {
+  font-size: 16px;
+  line-height: 20px;
+}
+
 #heading {
   position: relative;
   height: 40vh;
@@ -34,7 +52,7 @@ body {
   z-index: 0;
   width: 400px;
   left: 50%;
-  top: 0;
+  top: -70px;
   margin-left: -200px;
   opacity: 0.5;
 }
@@ -63,21 +81,31 @@ body {
   color: #2f4f4f;
 }
 
-p, h1, h2, h3, h4, h5 {
-  font-family: 'Roboto', sans-serif;
+#addReviewBttn {
+  position: absolute !important;
+  bottom: 50px;
+  right: 20px;
 }
 
 @media(max-width: 700px) {
   #mainHeading {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 70px;
     font-size: 50px;
   }
 
   #mainSubtitle {
     margin-top: 0;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #movieList li {
     width: 100vw;
+  }
+
+  #addReviewBttn {
+    position: inherit !important;
   }
 }
