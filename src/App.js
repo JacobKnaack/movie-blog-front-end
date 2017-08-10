@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
-import AddReview from 'material-ui/svg-icons/content/add'
+import AddReviewBttn from 'material-ui/svg-icons/content/add'
 
 import jacobInfo from './asset/content/jacob/index.json'
 import jacobValerianReview from './asset/content/jacob/valerian.md'
@@ -15,12 +15,29 @@ import meganValerianReview from './asset/content/megan/valerian.md'
 import ValerianImage from './asset/img/ValerianImage.jpg'
 import WelcomeGraphic from './asset/img/welcome-graphic.svg'
 import ReviewDisplay from './component/reviewDisplay'
+import AddReview from './component/addReview'
+import * as util from './lib/util.js'
 import './App.css'
+// TODO: complete dux to configure store correctly
+// import configureStore from './store/configureStore';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showReviewForm: false
+    }
+
+    this.toggleReviewForm = this.toggleReviewForm.bind(this)
+  }
+
+  toggleReviewForm () {
+    this.setState({ showReviewForm: !this.state.showReviewForm })
+  }
+
   render() {
     return (
       <MuiThemeProvider>
@@ -48,9 +65,16 @@ class App extends Component {
                 </li>
               </ul>
             </section>
-            <FloatingActionButton id='addReviewBttn'>
-              <AddReview />
+            <FloatingActionButton
+              id='addReviewBttn'
+              onClick={this.toggleReviewForm}
+            >
+              <AddReviewBttn />
             </FloatingActionButton>
+
+            {util.renderIf(this.state.showReviewForm,
+              <AddReview reviewForm={ this.toggleReviewForm } />
+            )}
           </main>
         </div>
       </MuiThemeProvider>

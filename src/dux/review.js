@@ -23,7 +23,7 @@ export const createReview = ({ title, release, img }) => (
   dispatch,
   getState
 ) => {
-  dipatch({
+  dispatch({
     [CALL_API]: {
       endpoints: `${process.env.API_URL}/review`,
       method: "POST",
@@ -61,5 +61,9 @@ export const fetchReviews = (dispatch, getState) => {
     }
   })
 }
+
+const review = combineReducers({
+
+})
 
 export default reviews;

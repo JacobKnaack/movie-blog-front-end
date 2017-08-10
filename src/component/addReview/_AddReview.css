@@ -1,0 +1,27 @@
+#reviewFormBackground {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -ms-filter: blur(4px);
+  -o-filter: blur(4px);
+  filter: blur(4px);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.7);
+}
+
+#addReviewForm {
+  position: fixed;
+  z-index: 5;
+  width: 80vw;
+  height: 75vh;
+  top: 20vh;
+  left: 50%;
+  margin-left: -40vw;
+}
+
+#card {
+  height: 100%;
+}
