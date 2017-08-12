@@ -62,8 +62,56 @@ export const fetchReviews = (dispatch, getState) => {
   })
 }
 
-const review = combineReducers({
+// --------------------
+// Reduces
+// --------------------
+export const isFetching = (state = false, action) => {
+  switch (action.type) {
+    case FETCH_REVIEWS_REQUEST:
+    case CREATE_REVIEW_REQUEST:
+      return true;
+    case FETCH_REVIEWS_SUCCESS:
+    case FETCH_REVIEWS_FAILURE:
+    case CREATE_REVIEW_SUCCESS:
+    case CREATE_REVIEW_FAILURE:
+      return false;
+    default:
+      return state;
+  }
+};
 
+const error = (state = null, action) => {
+  switch (action.type) {
+    case FETCH_REVIEWS_REQUEST:
+    case FETCH_REVIEWS_SUCCESS:
+    case CREATE_REVIEW_REQUEST:
+    case CREATE_REVIEW_SUCCESS:
+      return null;
+    case FETCH_REVIEW_FAILURE:
+    case CREATE_REVIEW_FAILURE:
+      return action.payload.data || { message: action.payload.message };
+    default:
+      return state;
+  }
+};
+
+const data = (state = {}, action) => {
+  switch(action.type) {
+    case FETCH_REVIEWS_SUCCESS:
+    case CREATE_REVIEW_SUCCESS:
+      return {
+        ...state,
+        ...action.payload.reviews
+      };
+    default:
+      return state;
+  }
+}
+
+const reviews = combineReducers({
+  isFetching,
+  error,
+  data
 })
 
 export default reviews;

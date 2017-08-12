@@ -83,6 +83,7 @@ p {
 
 #addReviewBttn {
   position: absolute !important;
+  z-index: 0 !important;
   bottom: 50px;
   right: 20px;
 }
