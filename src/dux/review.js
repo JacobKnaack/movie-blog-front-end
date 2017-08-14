@@ -12,6 +12,10 @@ export const FETCH_REVIEWS_REQUEST = 'FETCH_REVIEWS_REQUEST'
 export const FETCH_REVIEWS_SUCCESS = 'FETCH_REVIEWS_SUCCESS'
 export const FETCH_REVIEWS_FAILURE = 'FETCH_REVIEWS_FAILURE'
 
+export const FETCH_REVIEW_REQUEST = 'FETCH_REVIEW_REQUEST'
+export const FETCH_REVIEW_SUCCESS = 'FETCH_REVIEW_SUCCESS'
+export const FETCH_REVIEW_FAILURE = 'FETCH_REVIEW_FAILURE'
+
 export const UPDATE_REVIEW_REQUEST = 'UPDATE_REVIEW_REQUEST'
 export const UPDATE_REVIEW_SUCCESS = 'UPDATE_REVIEW_SUCCESS'
 export const UPDATE_REVIEW_FAILURE = 'UPDATE_REVIEW_FAILURE'
@@ -19,7 +23,7 @@ export const UPDATE_REVIEW_FAILURE = 'UPDATE_REVIEW_FAILURE'
 // --------------------
 // ACTIONS
 // --------------------
-export const createReview = ({ title, release, img }) => (
+export const createReview = ({ author, movie, release, img, content}) => (
   dispatch,
   getState
 ) => {
@@ -32,9 +36,11 @@ export const createReview = ({ title, release, img }) => (
         "Accepts": "application/json"
       },
       body: JSON.stringify({
-        title,
+        author,
+        movie,
         release,
         img,
+        content
       }),
       types: [
         CREATE_REVIEW_REQUEST,
@@ -52,18 +58,32 @@ export const createReview = ({ title, release, img }) => (
   });
 };
 
-
-// TODO: finish adding redux logic for modifing review on the backend
 export const fetchReviews = (dispatch, getState) => {
   dispatch({
     [CALL_API]: {
-
+      endpoints: `${process.env.API_URL}/review`.
+      method: "GET",
+      headers: {
+        "Accept": "application/JSON"
+      },
+      types: [
+      FETCH_REVIEWS_REQUEST,
+        {
+          FETCH_REVIEWS_SUCCESS,
+          payload: (action, state, res) => {
+            return getJSON(res).then(json => {
+              json
+            });
+          }
+        },
+        FETCH_REVIEWS_FAILURE;
+      ]
     }
-  })
-}
+  });
+};
 
 // --------------------
-// Reduces
+// Reducers
 // --------------------
 export const isFetching = (state = false, action) => {
   switch (action.type) {

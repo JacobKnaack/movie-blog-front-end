@@ -15,15 +15,44 @@
 .reviewForm {
   position: fixed;
   z-index: 5;
-  width: 80vw;
+  width: 90vw;
   height: 75vh;
   top: 20vh;
   left: 50%;
-  margin-left: -40vw;
+  margin-left: -45vw;
+}
+
+#authForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 300px;
+}
+
+#authForm div {
+  margin: 0 auto;
+}
+
+.formClose {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.formClose button {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.formClose button div, .formClose svg {
+  height: 30px !important;
 }
 
 #authorAuthForm {
   top: 40vh;
+  width: 400px;
+  height: 500px;
+  margin-left: -200px;
 }
 
 .card {
@@ -33,3 +62,10 @@
 #authorAuthForm .card {
   height: 200px;
 }
+
+/*@media(max-width: 700px) {
+  .reviewForm {
+    width: 90vw;
+    margin-left: -45vw;
+  }
+}*/

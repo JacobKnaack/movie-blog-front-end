@@ -46,7 +46,7 @@ class App extends Component {
             <div id='heading'>
               <img id='welcomeImg' src={WelcomeGraphic} alt='Sick Flick Nit Pickers'/>
               <h1 id='mainHeading'>Sick Flick Nit Pickers</h1>
-              <h4 id='mainSubtitle'>Movie Reviews by Jacob, Evaughn and Megan</h4>
+              <h4 id='mainSubtitle'>Movie Reviews by Jacob, Evaughn, and Megan</h4>
             </div>
             <section id='reviews'>
               <ul id='movieList'>

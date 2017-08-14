@@ -6,6 +6,10 @@
 
 This repository contains the front end code for a simple blog that displays reviews written by 3 exclusive reviewers.
 
+## User Authorization
+
+Reviewers will authorize their reviews using an environment variable set on project build, these will hard coded so no users will be added to the authorized user list.
+
 ### Usage
 
 Content for this blog is formatted with the use of markdown, so formatting your content should be done with the syntax for markdown files.
