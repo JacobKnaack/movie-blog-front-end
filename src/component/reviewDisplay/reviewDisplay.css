@@ -57,3 +57,17 @@
     font-size: 20px !important;
   }
 }
+
+@media(max-width: 350px) {
+  .reviewCard {
+    width: 200px;
+  }
+
+  .selected {
+    width: 100vw;
+  }
+
+  .movieTitle span {
+    font-size: 17px !important;
+  }
+}
