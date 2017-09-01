@@ -18,8 +18,6 @@ import ReviewDisplay from './component/reviewDisplay'
 import AddReview from './component/addReview'
 import * as util from './lib/util.js'
 import './App.css'
-// TODO: complete dux to configure store correctly
-// import configureStore from './store/configureStore';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();

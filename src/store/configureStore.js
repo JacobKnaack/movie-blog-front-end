@@ -1,31 +1,19 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { autoRehydrate } from 'redux-persist';
-import { apiMiddleware } from 'redux-api-middleware';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import rootReducer from '../dux';
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
+import authorReducer from '../dux/author'
+import movieReducer from '../dux/movie'
+import reviewReducer from '../dux/review'
 
-const middleware = [
-  thunk,
-  apiMiddleware
-];
+const reducer = combineReducers({
+  author: authorReducer,
+  movies: movieReducer,
+  reviews: reviewReducer
+})
 
-const configureStore = preloadedState => {
-  const store = createStore(
-    rootReducer,
-    preloadedState,
-    composeWithDevTools(applyMiddleware(...middleware), autoRehydrate())
+export default createStore(
+  reducer,
+  composeWithDevTools(
+    applyMiddleware(thunk)
   )
-
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept("../dux/", () => {
-      const nextRootReducer = require("../dux/").default;
-      store.replaceReducer(nextRootReducer);
-    });
-  };
-
-  return store;
-}
-
-export default configureStore;
+)
