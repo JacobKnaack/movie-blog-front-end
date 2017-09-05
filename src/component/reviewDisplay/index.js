@@ -16,32 +16,6 @@ class ReviewDisplay extends React.Component {
     this.toggleSelect = this.toggleSelect.bind(this)
   }
 
-  componentWillMount () {
-    fetch(this.props.jacobReview)
-      .then(response => {
-        return response.text()
-      })
-      .then(text => {
-        this.setState({ jacobMarkdown: marked(text) })
-      })
-
-    fetch(this.props.meganReview)
-      .then(response => {
-        return response.text()
-      })
-      .then(text => {
-        this.setState({ meganMarkdown: marked(text) })
-      })
-
-    fetch(this.props.ivanReview)
-      .then(response => {
-        return response.text()
-      })
-      .then(text => {
-        this.setState({ ivanMarkdown: marked(text) })
-      })
-  }
-
   toggleSelect() {
     this.setState({ selected: !this.state.selected })
   }
@@ -64,36 +38,36 @@ class ReviewDisplay extends React.Component {
 
           <CardHeader
             className='reviewHeading'
-            title='Jacob'
-            subtitle={this.props.jacob.title}
+            title={this.props.reviews.submissions[2].author}
+            subtitle={this.props.reviews.submissions[2].title}
           />
           <CardText
             className='reviewTxt'
-            dangerouslySetInnerHTML={{__html: this.state.jacobMarkdown}}
+            dangerouslySetInnerHTML={{__html: marked(this.props.reviews.submissions[2].markdown)}}
           />
 
         <Divider inset={ true }/>
 
           <CardHeader
             className='reviewHeading'
-            title='Megan'
-            subtitle={this.props.megan.title}
+            title={this.props.reviews.submissions[1].author}
+            subtitle={this.props.reviews.submissions[1].title}
           />
           <CardText
             className='reviewTxt'
-            dangerouslySetInnerHTML={{__html: this.state.meganMarkdown}}
+            dangerouslySetInnerHTML={{__html: marked(this.props.reviews.submissions[1].markdown)}}
           />
 
         <Divider inset={ true }/>
 
           <CardHeader
             className='reviewHeading'
-            title='Evaughn'
-            subtitle={this.props.ivan.title}
+            title={this.props.reviews.submissions[0].author}
+            subtitle={this.props.reviews.submissions[0].title}
           />
           <CardText
             className='reviewTxt'
-            dangerouslySetInnerHTML={{__html: this.state.ivanMarkdown}}
+            dangerouslySetInnerHTML={{__html: marked(this.props.reviews.submissions[0].markdown)}}
           />
         </div>
       )
@@ -112,8 +86,8 @@ class ReviewDisplay extends React.Component {
           </CardMedia>
           <CardTitle
             className='movieTitle'
-            title={this.props.title}
-            subtitle={this.props.release}
+            title={this.props.movie.name}
+            subtitle={this.props.movie.release}
           />
         </div>
         {reviewerSections}

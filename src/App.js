@@ -3,14 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import AddReviewBttn from 'material-ui/svg-icons/content/add'
 
-import jacobInfo from './asset/content/jacob/index.json'
-import jacobValerianReview from './asset/content/jacob/valerian.md'
-
-import ivanInfo from './asset/content/ivan/index.json'
-import ivanValerianReview from './asset/content/ivan/valerian.md'
-
-import meganInfo from './asset/content/megan/index.json'
-import meganValerianReview from './asset/content/megan/valerian.md'
+import data from './db.json'
 
 import ValerianImage from './asset/img/ValerianImage.jpg'
 import WelcomeGraphic from './asset/img/welcome-graphic.svg'
@@ -50,14 +43,8 @@ class App extends Component {
               <ul id='movieList'>
                 <li>
                   <ReviewDisplay
-                    title='Valerian and The City of A Thousand Planets'
-                    release='2017'
-                    jacob={jacobInfo.valerian}
-                    jacobReview={jacobValerianReview}
-                    ivan={ivanInfo.valerian}
-                    ivanReview={ivanValerianReview}
-                    megan={meganInfo.valerian}
-                    meganReview={meganValerianReview}
+                    reviews={data.reviews[0]}
+                    movie={data.movies[0]}
                     image={ValerianImage}
                   />
                 </li>
