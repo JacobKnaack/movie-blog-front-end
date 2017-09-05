@@ -4,9 +4,10 @@ import FloatingActionButton from 'material-ui/FloatingActionButton'
 import AddReviewBttn from 'material-ui/svg-icons/content/add'
 
 import data from './db.json'
+import images from './asset/img'
 
-import ValerianImage from './asset/img/ValerianImage.jpg'
-import WelcomeGraphic from './asset/img/welcome-graphic.svg'
+//TODO: fix review gallery 
+import ReviewGallery from './component/reviewGallery'
 import ReviewDisplay from './component/reviewDisplay'
 import AddReview from './component/addReview'
 import * as util from './lib/util.js'
@@ -35,7 +36,7 @@ class App extends Component {
         <div className="App">
           <main id='homeContainer'>
             <div id='heading'>
-              <img id='welcomeImg' src={WelcomeGraphic} alt='Sick Flick Nit Pickers'/>
+              <img id='welcomeImg' src={images.HeaderGraphic} alt='Sick Flick Nit Pickers'/>
               <h1 id='mainHeading'>Sick Flick Nit Pickers</h1>
               <h4 id='mainSubtitle'>Movie Reviews by Jacob, Evaughn, and Megan</h4>
             </div>
@@ -45,7 +46,17 @@ class App extends Component {
                   <ReviewDisplay
                     reviews={data.reviews[0]}
                     movie={data.movies[0]}
-                    image={ValerianImage}
+                    image={images.ValerianTitleImage}
+                  />
+                  <ReviewDisplay
+                    reviews={data.reviews[1]}
+                    movie={data.movies[1]}
+                    image={images.AtomicBlondeTitleImage}
+                  />
+                  <ReviewDisplay
+                    reviews={data.reviews[2]}
+                    movie={data.movies[2]}
+                    image={images.DunkirkTitleImage}
                   />
                 </li>
               </ul>

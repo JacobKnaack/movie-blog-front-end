@@ -36,39 +36,21 @@ class ReviewDisplay extends React.Component {
           </IconButton>
           <Divider className='reviewDivider'/>
 
-          <CardHeader
-            className='reviewHeading'
-            title={this.props.reviews.submissions[2].author}
-            subtitle={this.props.reviews.submissions[2].title}
-          />
-          <CardText
-            className='reviewTxt'
-            dangerouslySetInnerHTML={{__html: marked(this.props.reviews.submissions[2].markdown)}}
-          />
+        {this.props.reviews.submissions.map(review => (
+          <div className='reviewContainer'>
+            <CardHeader
+              className='reviewHeading'
+              title={review.author}
+              subtitle={review.title}
+            />
+            <CardText
+              className='reviewTxt'
+              dangerouslySetInnerHTML={{__html: marked(review.markdown)}}
+            />
 
-        <Divider inset={ true }/>
-
-          <CardHeader
-            className='reviewHeading'
-            title={this.props.reviews.submissions[1].author}
-            subtitle={this.props.reviews.submissions[1].title}
-          />
-          <CardText
-            className='reviewTxt'
-            dangerouslySetInnerHTML={{__html: marked(this.props.reviews.submissions[1].markdown)}}
-          />
-
-        <Divider inset={ true }/>
-
-          <CardHeader
-            className='reviewHeading'
-            title={this.props.reviews.submissions[0].author}
-            subtitle={this.props.reviews.submissions[0].title}
-          />
-          <CardText
-            className='reviewTxt'
-            dangerouslySetInnerHTML={{__html: marked(this.props.reviews.submissions[0].markdown)}}
-          />
+          <Divider inset={ true }/>
+          </div>
+        ))}
         </div>
       )
     } else {
