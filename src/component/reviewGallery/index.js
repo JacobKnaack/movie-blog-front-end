@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import {connect} from 'react-redux'
 // import {fetchMovies} from '../../reducers/movie'
-import { Carousel } from 'react-materialize'
+// import { Carousel } from 'react-materialize'
 import DisplayReview from '../reviewDisplay'
 import './_ReviewGallery.css'
 
