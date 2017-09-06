@@ -53,6 +53,13 @@ class ReviewDisplay extends React.Component {
           <Divider inset={ true }/>
           </div>
         ))}
+        <IconButton
+          onClick={this.toggleSelect}
+          className='closetxt'
+          tooltip='Close review'
+        >
+          <Close/>
+        </IconButton>
         </div>
       )
     } else {
