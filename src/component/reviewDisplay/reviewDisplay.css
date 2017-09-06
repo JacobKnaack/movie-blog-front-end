@@ -1,9 +1,10 @@
 .reviewCard {
   position: relative;
   z-index: 1 !important;
-  margin: 0 auto;
-  width: 500px;
-  height: 400px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 600px;
+  height: auto;
 }
 
 .movieTitle span {
@@ -17,7 +18,7 @@
 
 .selected {
   height: auto;
-  width: 700px;
+  width: 800px;
 }
 
 .reviewHeading {
@@ -35,13 +36,17 @@
 
 .reviewTxt {
   text-align: left;
-  font-size: 15px !important;
 }
 
-@media(max-width: 700px) {
+.reviewTxt p {
+  font-size: 17px !important;
+  line-height: 25px !important;
+}
+
+@media(max-width: 800px) {
   .reviewCard {
-    width: 300px;
-    height: 300px;
+    width: 70vw;
+    height: auto;
   }
 
   .selected {
@@ -60,7 +65,7 @@
 
 @media(max-width: 350px) {
   .reviewCard {
-    width: 200px;
+    width: 100vw;
   }
 
   .selected {

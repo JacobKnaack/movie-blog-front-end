@@ -37,7 +37,9 @@ class ReviewDisplay extends React.Component {
           <Divider className='reviewDivider'/>
 
         {this.props.reviews.submissions.map(review => (
-          <div className='reviewContainer'>
+          <div
+            key={review.author}
+            className='reviewContainer'>
             <CardHeader
               className='reviewHeading'
               title={review.author}
@@ -63,7 +65,7 @@ class ReviewDisplay extends React.Component {
     return (
       <Card className={reviewClasses}>
         <div onClick={this.toggleSelect}>
-          <CardMedia>
+          <CardMedia className='titleImage'>
             <img src={this.props.image} alt=''/>
           </CardMedia>
           <CardTitle
