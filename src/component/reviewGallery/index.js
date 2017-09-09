@@ -12,9 +12,10 @@ class ReviewGallery extends Component {
     return (
       <div className='movie-list'>
         <DisplayReview
-          reviews={this.props.reviews[0]}
-          movie={this.props.movies[0]}
-          image={this.props.images.ValerianTitleImage}
+          className='carousel-item'
+          reviews={this.props.reviews[2]}
+          movie={this.props.movies[2]}
+          image={this.props.images.DunkirkTitleImage}
         />
         <DisplayReview
           className='carousel-item'
@@ -23,10 +24,9 @@ class ReviewGallery extends Component {
           image={this.props.images.AtomicBlondeTitleImage}
         />
         <DisplayReview
-          className='carousel-item'
-          reviews={this.props.reviews[2]}
-          movie={this.props.movies[2]}
-          image={this.props.images.DunkirkTitleImage}
+          reviews={this.props.reviews[0]}
+          movie={this.props.movies[0]}
+          image={this.props.images.ValerianTitleImage}
         />
       </div>
     )
