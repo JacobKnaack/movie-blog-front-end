@@ -2,7 +2,7 @@
   "name": "movie-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jacobknaack.github.io/movie-blog-front-end",
+  "homepage": "http://sickflicks.review",
   "devDependencies": {
     "gh-pages": "^1.0.0",
     "react-scripts": "1.0.10"
