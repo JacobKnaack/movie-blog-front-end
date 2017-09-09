@@ -24,7 +24,7 @@
   margin: 10px 50px 0 50px;
 }
 
-#signInBttn {
+#signInBttn, #requestBttn {
   cursor: pointer;
   font-family: 'Bungee Shade', cursive;
   border: thin solid #ff69b4;

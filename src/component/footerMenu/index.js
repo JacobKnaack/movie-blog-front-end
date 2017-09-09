@@ -12,6 +12,15 @@ class FooterMenu extends Component {
           <li id='signInBttn'>
             Sign In
           </li>
+          <li id='requestBttn'>
+            <a
+              href='https://github.com/JacobKnaack/movie-blog-front-end/issues'
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Suggestions!
+            </a>
+          </li>
         </ul>
       </div>
     )
