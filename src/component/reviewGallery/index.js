@@ -13,6 +13,12 @@ class ReviewGallery extends Component {
       <div className='movie-list'>
         <DisplayReview
           className='carousel-item'
+          reviews={this.props.reviews[3]}
+          movie={this.props.movies[3]}
+          image={this.props.images.NakedTitleImage}
+        />
+        <DisplayReview
+          className='carousel-item'
           reviews={this.props.reviews[2]}
           movie={this.props.movies[2]}
           image={this.props.images.DunkirkTitleImage}

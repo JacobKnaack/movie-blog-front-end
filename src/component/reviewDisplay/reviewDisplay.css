@@ -43,6 +43,21 @@
   line-height: 25px !important;
 }
 
+p img {
+  max-width: 500px;
+  margin: 10px 10px;
+}
+
+p img:nth-of-type(even) {
+  float: right;
+  clear: right;
+}
+
+p img:nth-of-type(odd) {
+  float: left;
+  clear: left;
+}
+
 @media(max-width: 800px) {
   .reviewCard {
     width: 70vw;
@@ -61,6 +76,11 @@
   .movieTitle span {
     font-size: 20px !important;
   }
+
+  p img {
+    max-width: 300px;
+    max-height: 200px;
+  }
 }
 
 @media(max-width: 350px) {
@@ -74,5 +94,11 @@
 
   .movieTitle span {
     font-size: 17px !important;
+  }
+}
+
+@media(max-width: 325px) {
+  p img {
+    margin: 2px 2px 2px 0;
   }
 }
