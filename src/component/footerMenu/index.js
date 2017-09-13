@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import AddReview from '../addReview'
-import * as util from '../../lib/util.js'
+// import AddReview from '../addReview'
+// import * as util from '../../lib/util.js'
 import './_FooterMenu.css'
 
 class FooterMenu extends Component {

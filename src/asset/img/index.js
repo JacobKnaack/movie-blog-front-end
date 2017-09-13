@@ -5,11 +5,13 @@ import DunkirkImage from './dunkirk.jpg'
 import NakedImage from './naked.jpg'
 
 const Images = {
-  ValerianTitleImage: ValerianImage,
+  reviewImages: [
+    ValerianImage,
+    AtomicBlondeImage,
+    DunkirkImage,
+    NakedImage
+  ],
   HeaderGraphic: WelcomeGraphic,
-  AtomicBlondeTitleImage: AtomicBlondeImage,
-  DunkirkTitleImage: DunkirkImage,
-  NakedTitleImage: NakedImage,
 }
 
 export default Images

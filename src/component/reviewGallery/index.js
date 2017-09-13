@@ -7,33 +7,22 @@ import './_ReviewGallery.css'
 
 class ReviewGallery extends Component {
 
-//TODO: refactor so map function can pull corrent data from movie id
   render() {
+    let reviews = []
+    for (var i = 0; i < this.props.movies.length; i++) {
+      reviews.push(
+        <DisplayReview
+          className='carousel-item'
+          reviews={this.props.reviews[i]}
+          movie={this.props.movies[i]}
+          image={this.props.images.reviewImages[i]}
+        />
+      )
+    }
+
     return (
       <div className='movie-list'>
-        <DisplayReview
-          className='carousel-item'
-          reviews={this.props.reviews[3]}
-          movie={this.props.movies[3]}
-          image={this.props.images.NakedTitleImage}
-        />
-        <DisplayReview
-          className='carousel-item'
-          reviews={this.props.reviews[2]}
-          movie={this.props.movies[2]}
-          image={this.props.images.DunkirkTitleImage}
-        />
-        <DisplayReview
-          className='carousel-item'
-          reviews={this.props.reviews[1]}
-          movie={this.props.movies[1]}
-          image={this.props.images.AtomicBlondeTitleImage}
-        />
-        <DisplayReview
-          reviews={this.props.reviews[0]}
-          movie={this.props.movies[0]}
-          image={this.props.images.ValerianTitleImage}
-        />
+        {reviews.reverse()}
       </div>
     )
   }
