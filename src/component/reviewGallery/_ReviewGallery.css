@@ -1,7 +1,10 @@
 .movie-list {
+  position: relative;
   width: 100vw;
-  overflow: scroll;
-  margin-bottom: 100px;
+}
+
+#bottom-margin {
+  height: 100px;
 }
 
 .movie-list ul {

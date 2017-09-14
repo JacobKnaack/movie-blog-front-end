@@ -12,6 +12,7 @@ class ReviewGallery extends Component {
     for (var i = 0; i < this.props.movies.length; i++) {
       reviews.push(
         <DisplayReview
+          key={this.props.movies[i].name}
           className='carousel-item'
           reviews={this.props.reviews[i]}
           movie={this.props.movies[i]}
@@ -23,6 +24,7 @@ class ReviewGallery extends Component {
     return (
       <div className='movie-list'>
         {reviews.reverse()}
+        <div id='bottom-margin' />
       </div>
     )
   }
