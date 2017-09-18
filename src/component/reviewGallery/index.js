@@ -9,7 +9,8 @@ class ReviewGallery extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      search: ''
+      search: '',
+      searchReviews: []
     }
 
     this.movieSearch = this.movieSearch.bind(this)
@@ -20,13 +21,14 @@ class ReviewGallery extends Component {
     let { name, value } = e.target
     this.setState({ [name]: value })
 
+    let lowerName
     for (var i = 0; i < reviewArray.length; i ++) {
-      if (reviewArray[i].key.includes(searchString)) {
+      lowerName = reviewArray[i].key.toLowerCase()
+      if (lowerName.includes(searchString.toLowerCase())) {
         searchResults.push(reviewArray[i])
       }
     }
-
-    console.log(searchResults)
+    this.setState({ searchReviews: searchResults })
   };
 
   render() {
@@ -42,6 +44,7 @@ class ReviewGallery extends Component {
         />
       )
     }
+    if (this.state.searchReviews && this.state.search) reviews = this.state.searchReviews
 
     return (
       <div className='movie-list'>
@@ -49,7 +52,7 @@ class ReviewGallery extends Component {
           <label>Search Reviews:</label>
           <input
             name='search'
-            onChange={(e) => this.movieSearch(e, reviews, this.state.search)}
+            onChange={ (e) => this.movieSearch(e, reviews, this.state.search) }
             value={this.state.search}
           />
         </div>
