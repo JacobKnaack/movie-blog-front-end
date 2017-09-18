@@ -6,6 +6,28 @@ import DisplayReview from '../reviewDisplay'
 import './_ReviewGallery.css'
 
 class ReviewGallery extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      search: ''
+    }
+
+    this.movieSearch = this.movieSearch.bind(this)
+  }
+
+  movieSearch (e, reviewArray, searchString) {
+    let searchResults = []
+    let { name, value } = e.target
+    this.setState({ [name]: value })
+
+    for (var i = 0; i < reviewArray.length; i ++) {
+      if (reviewArray[i].key.includes(searchString)) {
+        searchResults.push(reviewArray[i])
+      }
+    }
+
+    console.log(searchResults)
+  };
 
   render() {
     let reviews = []
@@ -23,6 +45,14 @@ class ReviewGallery extends Component {
 
     return (
       <div className='movie-list'>
+        <div className='movieSearchInput'>
+          <label>Search Reviews:</label>
+          <input
+            name='search'
+            onChange={(e) => this.movieSearch(e, reviews, this.state.search)}
+            value={this.state.search}
+          />
+        </div>
         {reviews.reverse()}
         <div id='bottom-margin' />
       </div>
