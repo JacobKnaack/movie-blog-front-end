@@ -32,13 +32,13 @@ p {
 
 #heading {
   position: relative;
-  height: 30vh;
+  height: 20vh;
   width: 100vw;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   color: #949494;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   background: linear-gradient(#ffffff, #A1EEF9);
 }
 
@@ -61,7 +61,7 @@ p {
 
 #mainSubtitle {
   z-index: 1;
-  margin-top: 0;
+  margin: 0;
   font-size: 30px;
   font-family: 'VT323', cursive;
   color: #2f4f4f;
@@ -78,13 +78,14 @@ p {
   #mainHeading {
     margin-top: 30px;
     margin-bottom: 10px;
-    font-size: 35px;
+    font-size: 30px;
   }
 
   #mainSubtitle {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 20px;
   }
 
   #addReviewBttn {
@@ -94,5 +95,11 @@ p {
   #welcomeImg {
     width: 100vw;
     margin-left: -50vw;
+  }
+}
+
+@media(max-width: 350px) {
+  #heading {
+    height: 25vh;
   }
 }

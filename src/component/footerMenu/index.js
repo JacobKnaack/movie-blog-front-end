@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import Menu from 'material-ui/Menu'
+import MenuItem from 'material-ui/MenuItem'
+// import SearchIcon from 'material-ui/svg-icons/action/search'
+import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
 // import AddReview from '../addReview'
 // import * as util from '../../lib/util.js'
@@ -25,19 +29,34 @@ class FooterMenu extends Component {
     return (
       <div className={footerClasses}>
         <ul className='menuItems'>
-          <li id='signInBttn' onClick={this.toggleFooterMenu}>
-            Sign In
+          <li id='menuBttn' onClick={this.toggleFooterMenu}>
+            <MenuIcon className='svgIcon'/>
           </li>
-          <li id='requestBttn'>
-            <a
-              href='https://github.com/JacobKnaack/movie-blog-front-end/issues'
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Suggestions!
-            </a>
-          </li>
+          {/*<li id='searchBox'>
+            <label className='inputLabel'>
+              <SearchIcon className='svgIcon' />
+            </label>
+            <input
+              className='footerInput'
+            />
+          </li>*/}
         </ul>
+        <div id='openMenuItems'>
+          <Menu id='muiMenu'>
+            <MenuItem primaryText='Sign In' />
+            <MenuItem
+              children={
+                <a
+                  href='https://github.com/JacobKnaack/movie-blog-front-end/issues'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Suggestions?
+                </a>
+              }
+            />
+          </Menu>
+        </div>
       </div>
     )
   }

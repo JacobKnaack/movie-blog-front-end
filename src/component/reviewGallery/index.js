@@ -17,17 +17,17 @@ class ReviewGallery extends Component {
   }
 
   movieSearch (e, reviewArray, searchString) {
-    let searchResults = []
+    let searchResults = [], lowerName
     let { name, value } = e.target
     this.setState({ [name]: value })
 
-    let lowerName
     for (var i = 0; i < reviewArray.length; i ++) {
       lowerName = reviewArray[i].key.toLowerCase()
       if (lowerName.includes(searchString.toLowerCase())) {
         searchResults.push(reviewArray[i])
       }
     }
+
     this.setState({ searchReviews: searchResults })
   };
 
@@ -49,7 +49,7 @@ class ReviewGallery extends Component {
     return (
       <div className='movie-list'>
         <div className='movieSearchInput'>
-          <label>Search Reviews:</label>
+          <label>Search Reviews: </label>
           <input
             name='search'
             onChange={ (e) => this.movieSearch(e, reviews, this.state.search) }
