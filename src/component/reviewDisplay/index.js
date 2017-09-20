@@ -1,9 +1,9 @@
 import React from 'react'
-import marked from 'marked'
-import { Card, CardHeader, CardText, CardTitle, CardMedia } from 'material-ui/Card'
+import { Card, CardTitle, CardMedia } from 'material-ui/Card'
 import Divider from 'material-ui/Divider'
 import IconButton from 'material-ui/IconButton'
-import Close from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
+import Close from 'material-ui/svg-icons/navigation/cancel'
+import AuthorReview from './authorReview'
 import './reviewDisplay.css'
 
 class ReviewDisplay extends React.Component {
@@ -23,43 +23,27 @@ class ReviewDisplay extends React.Component {
 
   render() {
     let reviewerSections, reviewClasses;
-    if (this.state.selected === true) {
+    if (this.state.selected) {
       reviewClasses = 'reviewCard selected'
       reviewerSections = (
         <div className='reviewContent'>
-          <IconButton
-            onClick={this.toggleSelect}
-            className='closetxt'
-            tooltip='Close review'
-          >
-            <Close/>
-          </IconButton>
           <Divider className='reviewDivider'/>
-
-        {this.props.reviews.submissions.map(review => (
-          <div
-            key={review.author}
-            className='reviewContainer'>
-            <CardHeader
-              className='reviewHeading'
-              title={review.author}
-              subtitle={review.title}
-            />
-            <CardText
-              className='reviewTxt'
-              dangerouslySetInnerHTML={{__html: marked(review.markdown)}}
-            />
-
-          <Divider inset={ true }/>
+          <div className='reviewList'>
+            <IconButton
+              onClick={this.toggleSelect}
+              className='closeCard'
+              tooltip='Close Reviews'
+            >
+              <Close/>
+            </IconButton>
+            {this.props.reviews.submissions.map(review => (
+              <AuthorReview
+                key={review.author}
+                review={review}
+              />
+            ))}
           </div>
-        ))}
-        <IconButton
-          onClick={this.toggleSelect}
-          className='closetxt'
-          tooltip='Close review'
-        >
-          <Close/>
-        </IconButton>
+
         </div>
       )
     } else {

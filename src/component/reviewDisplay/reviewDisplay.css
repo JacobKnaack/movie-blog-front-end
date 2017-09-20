@@ -1,6 +1,5 @@
 .reviewCard {
   position: relative;
-  z-index: 1 !important;
   margin: auto;
   margin-bottom: 50px;
   width: 600px;
@@ -16,9 +15,39 @@
   position: relative;
 }
 
-.selected {
+.reviewContent .closeCard {
+  margin-right: 90% !important;
+}
+
+.reviewCard.selected {
   height: auto;
   width: 800px;
+  z-index: 2 !important;
+}
+
+.reviewList {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewList .reviewContainer {
+  position: relative;
+  cursor: pointer;
+  z-index: 3 !important;
+  width: 80%;
+  margin: 30px auto;
+  transition: 1s ease-in-out;
+}
+
+.reviewList .reviewContainer.selected {
+  position: absolute;
+  z-index: 4 !important;
+  width: 100%;
+  margin: 40px auto 100px auto;
+  box-shadow: none !important;
+  transition: 1s ease-in-out;
 }
 
 .reviewHeading {

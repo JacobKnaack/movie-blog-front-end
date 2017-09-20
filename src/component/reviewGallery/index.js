@@ -57,7 +57,7 @@ class ReviewGallery extends Component {
           />
         </div>
         {reviews.reverse()}
-        <div id='bottom-margin' />
+        <div className='bottom-margin' />
       </div>
     )
   }
