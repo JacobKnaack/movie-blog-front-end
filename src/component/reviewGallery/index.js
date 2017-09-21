@@ -13,13 +13,13 @@ class ReviewGallery extends Component {
       searchReviews: []
     }
 
-    this.movieSearch = this.movieSearch.bind(this)
+    this.movieSearch = this.movieSearch.bind(this);
   }
 
   movieSearch (e, reviewArray, searchString) {
-    let searchResults = [], lowerName
     let { name, value } = e.target
     this.setState({ [name]: value })
+    let searchResults = [], lowerName
 
     for (var i = 0; i < reviewArray.length; i ++) {
       lowerName = reviewArray[i].key.toLowerCase()
@@ -37,7 +37,6 @@ class ReviewGallery extends Component {
       reviews.push(
         <DisplayReview
           key={this.props.movies[i].name}
-          className='carousel-item'
           reviews={this.props.reviews[i]}
           movie={this.props.movies[i]}
           image={this.props.images.reviewImages[i]}

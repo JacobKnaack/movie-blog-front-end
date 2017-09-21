@@ -33,6 +33,7 @@ class ReviewDisplay extends React.Component {
               onClick={this.toggleSelect}
               className='closeCard'
               tooltip='Close Reviews'
+              tooltipPosition='top-right'
             >
               <Close/>
             </IconButton>
@@ -43,7 +44,6 @@ class ReviewDisplay extends React.Component {
               />
             ))}
           </div>
-
         </div>
       )
     } else {
