@@ -4,6 +4,7 @@ import AtomicBlondeImage from './atomic-blonde.jpg'
 import DunkirkImage from './dunkirk.jpg'
 import NakedImage from './naked.jpg'
 import ItImage from './it.jpg'
+import MotherImage from './mother.png'
 
 const Images = {
   reviewImages: [
@@ -11,7 +12,8 @@ const Images = {
     AtomicBlondeImage,
     DunkirkImage,
     NakedImage,
-    ItImage
+    ItImage,
+    MotherImage
   ],
   HeaderGraphic: WelcomeGraphic,
 }

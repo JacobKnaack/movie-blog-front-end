@@ -18,6 +18,7 @@ class ReviewDisplay extends React.Component {
 
   toggleSelect() {
     this.setState({ selected: !this.state.selected })
+    this.props.selectMovie(this.props.movie.name)
   }
 
 
