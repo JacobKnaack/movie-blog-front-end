@@ -100,7 +100,7 @@ p img:nth-of-type(odd) {
     height: auto;
   }
 
-  .selected {
+  .reviewCard.selected {
     width: 100vw;
     height: auto;
   }
@@ -114,8 +114,10 @@ p img:nth-of-type(odd) {
   }
 
   p img {
-    max-width: 300px;
+    max-width: 350px;
     max-height: 200px;
+    margin-right: 10px;
+    margin-left: 0px;
   }
 }
 
@@ -124,7 +126,7 @@ p img:nth-of-type(odd) {
     width: 100vw;
   }
 
-  .selected {
+  .reviewCard.selected {
     width: 100vw;
   }
 
@@ -135,6 +137,7 @@ p img:nth-of-type(odd) {
 
 @media(max-width: 325px) {
   p img {
-    margin: 2px 2px 2px 0;
+    max-width: 280px;
+    margin: 5px 1px;
   }
 }
