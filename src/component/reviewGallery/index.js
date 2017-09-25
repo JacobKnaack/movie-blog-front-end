@@ -55,6 +55,7 @@ class ReviewGallery extends Component {
           reviews={this.props.reviews[i]}
           movie={this.props.movies[i]}
           image={this.props.images.reviewImages[i]}
+          avatars={this.props.images.avatars}
         />
       )
     }

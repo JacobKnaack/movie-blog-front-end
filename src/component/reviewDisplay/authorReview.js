@@ -1,6 +1,7 @@
 import React from 'react';
 import marked from 'marked';
 import { Card, CardHeader, CardText} from 'material-ui/Card';
+import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import More from 'material-ui/svg-icons/navigation/expand-more';
 import Less from 'material-ui/svg-icons/navigation/expand-less';
@@ -10,11 +11,20 @@ class AuthorReview extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selected: false
+      selected: false,
+      avatar: ''
     }
 
     this.toggleReview = this.toggleReview.bind(this)
   };
+
+  componentDidMount () {
+    for (var i = 0; i < this.props.avatars.length; i++) {
+      if (this.props.avatars[i].author === this.props.review.author) {
+        this.setState({ avatar: this.props.avatars[i].image })
+      }
+    }
+  }
 
   toggleReview () {
     this.setState({ selected: !this.state.selected })
@@ -32,11 +42,19 @@ class AuthorReview extends React.Component {
           if (!this.state.selected) this.toggleReview()
         }}
       >
-        <CardHeader
-          className='reviewHeading'
-          title={this.props.review.title}
-          subtitle={this.props.review.author}
-        />
+        <div className='headingContainer'>
+          <Avatar
+            className='authorAvatar'
+            src={this.state.avatar}
+            size={100}
+            backgroundColor='#E9967A'
+          />
+          <CardHeader
+            className='reviewHeading'
+            title={this.props.review.title}
+            subtitle={this.props.review.author}
+          />
+        </div>
         {util.renderIf(!this.state.selected,
           <IconButton
             className='closetxt'

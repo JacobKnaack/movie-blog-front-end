@@ -55,7 +55,7 @@ p {
 #mainHeading {
   z-index: 1;
   font-size: 70px;
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Bungee Shade', sans-serif;
   color: #ff69b4;
 }
 
@@ -63,7 +63,7 @@ p {
   z-index: 1;
   margin: 0;
   font-size: 30px;
-  font-family: 'VT323', cursive;
+  font-family: 'VT323', sans-serif;
   color: #2f4f4f;
 }
 
@@ -72,6 +72,12 @@ p {
   z-index: 0 !important;
   bottom: 50px;
   right: 20px;
+}
+
+@media(max-width: 1100px) {
+  #mainHeading {
+    font-size: 45px;
+  }
 }
 
 @media(max-width: 700px) {

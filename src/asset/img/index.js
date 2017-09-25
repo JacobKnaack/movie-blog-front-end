@@ -1,3 +1,6 @@
+import IvanAvatar from './ivan-avatar.svg'
+import MeganAvatar from './megan-avatar.svg'
+import JacobAvatar from './jacob-avatar.svg'
 import ValerianImage from './ValerianImage.jpg'
 import WelcomeGraphic from './welcome-graphic.svg'
 import AtomicBlondeImage from './atomic-blonde.jpg'
@@ -16,6 +19,11 @@ const Images = {
     MotherImage
   ],
   HeaderGraphic: WelcomeGraphic,
+  avatars: [
+    {author: 'Jacob', image: JacobAvatar},
+    {author: 'e-vaughn', image: IvanAvatar},
+    {author: 'Megan', image: MeganAvatar}
+  ]
 }
 
 export default Images

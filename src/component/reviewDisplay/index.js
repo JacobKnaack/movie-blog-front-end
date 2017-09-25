@@ -40,6 +40,7 @@ class ReviewDisplay extends React.Component {
             </IconButton>
             {this.props.reviews.submissions.map(review => (
               <AuthorReview
+                avatars={this.props.avatars}
                 key={review.author}
                 review={review}
               />

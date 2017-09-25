@@ -57,9 +57,21 @@
   transition: 1s ease-in-out;
 }
 
+.headingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.headingContainer .authorAvatar {
+  margin: 40px 20px;
+  margin-bottom: 0;
+}
+
 .reviewHeading {
-  text-align: center;
+  text-align: left !important;
   padding-top: 50px !important;
+  padding-bottom: 0;
 }
 
 .reviewHeading div span {
@@ -103,6 +115,10 @@ p img:nth-of-type(odd) {
   .reviewCard.selected {
     width: 100vw;
     height: auto;
+  }
+
+  .headingContainer .authorAvatar {
+    margin-top: 20%;
   }
 
   .movieTitle {
