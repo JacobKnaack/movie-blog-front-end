@@ -24,28 +24,28 @@
 }
 
 .movieSearchInput {
-  margin: 5px auto;
-  width: 600px;
-  font-family: 'VT323', cursive;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 300px;
+  background: none;
   font-size: 30px;
-  border: thin solid #FF69B4;
-  border-radius: 5px 5px 5px 5px;
-  background: rgba(245,245,245, 0.8);
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  border: none;
+  border-bottom: thin solid #01FFC4;
+  box-shadow: 0 4px 2px -2px gray;
+  justify-content: center;
 }
 
 .movieSearchInput label {
   padding-left: 5px;
 }
 .movieSearchInput input {
-  width: 400px;
+  width: auto;
   background: none;
   border: none;
   outline: none;
-  font-size: 30px;
-  font-family: 'VT323', cursive;
+  font-size: 20px;
 }
 
 @media(max-width: 700px) {
@@ -55,16 +55,5 @@
 
   .movie-list li {
     width: 100vw;
-  }
-
-  .movieSearchInput {
-    font-size: 20px;
-    width: auto;
-    margin: 5px 10px 5px 10px;
-  }
-
-  .movieSearchInput input {
-    font-size: 20px;
-    width: 150px;
   }
 }

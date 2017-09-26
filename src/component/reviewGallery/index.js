@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // import {fetchMovies} from '../../reducers/movie'
 // import { Carousel } from 'react-materialize'
 import DisplayReview from '../reviewDisplay'
+import Search from 'material-ui/svg-icons/action/search'
 import * as util from '../../lib/util'
 import './_ReviewGallery.css'
 
@@ -72,7 +73,9 @@ class ReviewGallery extends Component {
       <div className='movie-list'>
         {util.renderIf(!this.state.gallerySelection,
           <div className='movieSearchInput'>
-            <label>Search Reviews: </label>
+            <label>
+              <Search />
+            </label>
             <input
               name='search'
               onChange={ (e) => this.movieSearch(e, reviews, this.state.search) }

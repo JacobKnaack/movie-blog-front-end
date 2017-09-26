@@ -1,3 +1,4 @@
+import Logo from './sfnp.svg'
 import IvanAvatar from './ivan-avatar.svg'
 import MeganAvatar from './megan-avatar.svg'
 import JacobAvatar from './jacob-avatar.svg'
@@ -10,6 +11,8 @@ import ItImage from './it.jpg'
 import MotherImage from './mother.png'
 
 const Images = {
+  HeaderGraphic: WelcomeGraphic,
+  Logo: Logo,
   reviewImages: [
     ValerianImage,
     AtomicBlondeImage,
@@ -18,7 +21,6 @@ const Images = {
     ItImage,
     MotherImage
   ],
-  HeaderGraphic: WelcomeGraphic,
   avatars: [
     {author: 'Jacob', image: JacobAvatar},
     {author: 'e-vaughn', image: IvanAvatar},

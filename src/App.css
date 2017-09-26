@@ -1,5 +1,5 @@
 body{
-  background-color: #A1EEF9;
+  background-color: #D3D3D3;
 }
 
 .App {
@@ -32,14 +32,16 @@ p {
 
 #heading {
   position: relative;
-  height: 20vh;
+  height: 25vh;
   width: 100vw;
   margin-bottom: 30px;
+  padding-top: 20px;
   color: #949494;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(#ffffff, #A1EEF9);
+  background: linear-gradient(#D74898, #01FFC4);
+  box-shadow: 5px 5px 10px #888888;
 }
 
 #welcomeImg {
@@ -52,6 +54,10 @@ p {
   opacity: 0.5;
 }
 
+#logoImg {
+  height: 125px;
+}
+
 #mainHeading {
   z-index: 1;
   font-size: 70px;
@@ -61,9 +67,9 @@ p {
 
 #mainSubtitle {
   z-index: 1;
-  margin: 0;
-  font-size: 30px;
-  font-family: 'VT323', sans-serif;
+  margin: 20px 0;
+  font-size: 50px;
+  font-family: 'Libre Barcode 39 Text', sans-serif;
   color: #2f4f4f;
 }
 
@@ -87,12 +93,16 @@ p {
     font-size: 30px;
   }
 
-  #mainSubtitle {
+  #logoImg {
+    height: 80px;
+  }
+
+  /*#mainSubtitle {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
-  }
+  }*/
 
   #addReviewBttn {
     position: inherit !important;
