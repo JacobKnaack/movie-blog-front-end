@@ -43,6 +43,11 @@ p {
   background: linear-gradient(#D74898, #01FFC4);
   box-shadow: 5px 5px 10px #888888;
 }
+@media(max-height: 920px) {
+  #heading {
+    height: 250px;
+  }
+}
 
 #welcomeImg {
   position: absolute;
@@ -96,13 +101,6 @@ p {
   #logoImg {
     height: 80px;
   }
-
-  /*#mainSubtitle {
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-  }*/
 
   #addReviewBttn {
     position: inherit !important;
