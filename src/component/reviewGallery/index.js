@@ -1,26 +1,51 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 // import {connect} from 'react-redux'
 // import {fetchMovies} from '../../reducers/movie'
-// import { Carousel } from 'react-materialize'
+import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
+
 import DisplayReview from '../reviewDisplay'
 import Search from 'material-ui/svg-icons/action/search'
 import * as util from '../../lib/util'
 import './_ReviewGallery.css'
 
+function mapUrlToProps(url, props) {
+  return {
+    movie: decode(UrlQueryParamTypes.string, url.movie),
+    review: decode(UrlQueryParamTypes.String, url.review)
+  }
+}
+
+function mapUrlChangeHandlersToProps(props) {
+  return {
+    onChangeMovie: (value) => replaceInUrlQuery('movie', encode(UrlQueryParamTypes.string, value))
+  }
+}
+
 class ReviewGallery extends Component {
+  static propTypes = {
+    movie: PropTypes.string,
+    review: PropTypes.string,
+    onChangeMovie: PropTypes.func,
+    onCHangeReview: PropTypes.func
+  }
+
+  static defaultProps = {
+   movie: ''
+ }
+
   constructor(props) {
     super(props)
     this.state = {
       search: '',
-      searchReviews: [],
-      gallerySelection: ''
+      searchReviews: []
     }
 
     this.movieSearch = this.movieSearch.bind(this);
     this.selectMovie = this.selectMovie.bind(this);
   }
 
-  // search function used to filter review array
+  // function that searches review with search string
   movieSearch (e, reviewArray, searchString) {
     let { name, value } = e.target
     this.setState({ [name]: value })
@@ -38,10 +63,10 @@ class ReviewGallery extends Component {
 
   // sets selected movie state variable
   selectMovie (movieName) {
-    if (this.state.gallerySelection === movieName) {
-      this.setState({ gallerySelection: '' })
+    if (this.props.movie === movieName) {
+      this.props.onChangeMovie('')
     } else {
-      this.setState({ gallerySelection: movieName })
+      this.props.onChangeMovie(movieName)
     }
   }
 
@@ -54,24 +79,27 @@ class ReviewGallery extends Component {
           key={this.props.movies[i].name}
           selectMovie={this.selectMovie}
           reviews={this.props.reviews[i]}
-          movie={this.props.movies[i]}
+          movieFromArray={this.props.movies[i]}
           image={this.props.images.reviewImages[i]}
           avatars={this.props.images.avatars}
         />
       )
     }
-    if (this.state.searchReviews && this.state.search) reviews = this.state.searchReviews
+    // filters array based on search string seaarch results
+    if (this.state.searchReviews && this.state.search) {
+      reviews = this.state.searchReviews
+    }
 
     // searches review array for movie matching a selected name
-    if (this.state.gallerySelection) {
+    if (this.props.movie) {
       reviews = [reviews.find(name => {
-        return name.key === this.state.gallerySelection
+        return name.key === this.props.movie
       })]
     }
 
     return (
       <div className='movie-list'>
-        {util.renderIf(!this.state.gallerySelection,
+        {util.renderIf(!this.props.movie,
           <div className='movieSearchInput'>
             <label>
               <Search />
@@ -90,7 +118,8 @@ class ReviewGallery extends Component {
   }
 }
 
-export default ReviewGallery
+// turns review gallery into a higher order component for
+export default addUrlProps({ mapUrlToProps, mapUrlChangeHandlersToProps })(ReviewGallery);
 // export default connect(
 //   (state) => ({movies: state.movies})
 //   {fetchMovies}
