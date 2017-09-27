@@ -10,9 +10,12 @@ import NakedImage from './naked.jpg'
 import ItImage from './it.jpg'
 import MotherImage from './mother.png'
 
-const Images = {
+ export const siteGraphics = {
   HeaderGraphic: WelcomeGraphic,
-  Logo: Logo,
+  Logo: Logo
+}
+
+const Images = {
   reviewImages: [
     ValerianImage,
     AtomicBlondeImage,

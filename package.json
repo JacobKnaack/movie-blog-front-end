@@ -8,13 +8,15 @@
     "react-scripts": "1.0.10"
   },
   "dependencies": {
+    "history": "^4.7.2",
     "marked": "^0.3.6",
     "material-ui": "^0.18.7",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-materialize": "^1.0.11",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
     "react-redux": "^5.0.6",
     "react-tap-event-plugin": "^2.0.1",
+    "react-url-query": "^1.2.0",
     "redux": "^3.7.2",
     "redux-api-middleware": "^1.0.3",
     "redux-devtools-extension": "^2.13.2",

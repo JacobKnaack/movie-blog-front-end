@@ -1,13 +1,40 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import marked from 'marked';
 import { Card, CardHeader, CardText} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
+import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
+
 import More from 'material-ui/svg-icons/navigation/expand-more';
 import Less from 'material-ui/svg-icons/navigation/expand-less';
 import * as util from '../../lib/util';
 
+function mapUrlToProps(url, props) {
+  return {
+    movie: decode(UrlQueryParamTypes.string, url.movie),
+    review: decode(UrlQueryParamTypes.string, url.review)
+  }
+}
+
+function mapUrlChangeHandlersToProps (props) {
+  return {
+    onChangeReview: (value) => replaceInUrlQuery('review', encode(UrlQueryParamTypes.string, value))
+  }
+}
+
 class AuthorReview extends React.Component {
+  static propTypes = {
+    movie: PropTypes.string,
+    review: PropTypes.string,
+    onChangeReview: PropTypes.func
+  }
+
+  static defaultProps = {
+    movie: '',
+    review: ''
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -19,15 +46,22 @@ class AuthorReview extends React.Component {
   };
 
   componentDidMount () {
+    if ( this.props.review === this.props.reviewFromArray.title ) {
+      this.setState({ selected: true })
+    }
     for (var i = 0; i < this.props.avatars.length; i++) {
-      if (this.props.avatars[i].author === this.props.review.author) {
+      if (this.props.avatars[i].author === this.props.reviewFromArray.author) {
         this.setState({ avatar: this.props.avatars[i].image })
       }
     }
   }
 
+// TODO Make this toggle url query when review is selected
   toggleReview () {
     this.setState({ selected: !this.state.selected })
+    if( this.props.review === this.props.reviewFromArray.title) {
+      this.props.onChangeReview('')
+    } else this.props.onChangeReview(this.props.reviewFromArray.title)
   };
 
   render () {
@@ -36,7 +70,7 @@ class AuthorReview extends React.Component {
 
     return (
       <Card
-        id={this.props.review.author}
+        id={this.props.reviewFromArray.author}
         className={cardClasses}
         onClick={() => {
           if (!this.state.selected) this.toggleReview()
@@ -51,8 +85,8 @@ class AuthorReview extends React.Component {
           />
           <CardHeader
             className='reviewHeading'
-            title={this.props.review.title}
-            subtitle={this.props.review.author}
+            title={this.props.reviewFromArray.title}
+            subtitle={this.props.reviewFromArray.author}
           />
         </div>
         {util.renderIf(!this.state.selected,
@@ -67,7 +101,7 @@ class AuthorReview extends React.Component {
           <div>
             <CardText
               className='reviewTxt'
-              dangerouslySetInnerHTML={{__html: marked(this.props.review.markdown)}}
+              dangerouslySetInnerHTML={{__html: marked(this.props.reviewFromArray.markdown)}}
             />
             <IconButton
               onClick={this.toggleReview}
@@ -83,4 +117,4 @@ class AuthorReview extends React.Component {
   }
 };
 
-export default AuthorReview;
+export default addUrlProps({ mapUrlToProps, mapUrlChangeHandlersToProps })(AuthorReview)

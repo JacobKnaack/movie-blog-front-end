@@ -1,12 +1,39 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Card, CardTitle, CardMedia } from 'material-ui/Card'
 import Divider from 'material-ui/Divider'
 import IconButton from 'material-ui/IconButton'
+import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
+
 import Close from 'material-ui/svg-icons/navigation/cancel'
 import AuthorReview from './authorReview'
 import './reviewDisplay.css'
 
+function mapUrlToProps(url, props) {
+  return {
+    movie: decode(UrlQueryParamTypes.string, url.movie),
+    review: decode(UrlQueryParamTypes.string, url.review)
+  }
+}
+
+function mapUrlChangeHandlersToProps(props) {
+  return {
+    onChangeMovie: (value) => replaceInUrlQuery('movie', encode(UrlQueryParamTypes.string, value)),
+    onChangeReview: (value) => replaceInUrlQuery('review', encode(UrlQueryParamTypes.string, value))
+  }
+}
+
 class ReviewDisplay extends React.Component {
+  static propTypes = {
+    movie: PropTypes.string,
+    review: PropTypes.string
+  }
+
+  static defaultProps = {
+    movie: null,
+    review: ''
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -16,9 +43,15 @@ class ReviewDisplay extends React.Component {
     this.toggleSelect = this.toggleSelect.bind(this)
   }
 
+  componentDidMount () {
+    if (this.props.movie) this.setState({ selected: true })
+  }
+
   toggleSelect() {
     this.setState({ selected: !this.state.selected })
-    this.props.selectMovie(this.props.movie.name)
+    this.props.selectMovie(this.props.movieFromArray.name)
+    if (this.props.movie) this.props.onChangeMovie('')
+    if (this.props.review) this.props.onChangeReview('')
   }
 
 
@@ -42,7 +75,7 @@ class ReviewDisplay extends React.Component {
               <AuthorReview
                 avatars={this.props.avatars}
                 key={review.author}
-                review={review}
+                reviewFromArray={review}
               />
             ))}
           </div>
@@ -63,8 +96,8 @@ class ReviewDisplay extends React.Component {
           </CardMedia>
           <CardTitle
             className='movieTitle'
-            title={this.props.movie.name}
-            subtitle={this.props.movie.release}
+            title={this.props.movieFromArray.name}
+            subtitle={this.props.movieFromArray.release}
           />
         </div>
         {reviewerSections}
@@ -73,4 +106,4 @@ class ReviewDisplay extends React.Component {
   }
 }
 
-export default ReviewDisplay
+export default addUrlProps({ mapUrlToProps, mapUrlChangeHandlersToProps })(ReviewDisplay)
