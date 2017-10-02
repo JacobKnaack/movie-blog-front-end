@@ -9,8 +9,9 @@ import DunkirkImage from './dunkirk.jpg'
 import NakedImage from './naked.jpg'
 import ItImage from './it.jpg'
 import MotherImage from './mother.png'
+import Kingsman2Image from './kingsman2.jpg'
 
- export const siteGraphics = {
+export const siteGraphics = {
   HeaderGraphic: WelcomeGraphic,
   Logo: Logo
 }
@@ -22,7 +23,8 @@ const Images = {
     DunkirkImage,
     NakedImage,
     ItImage,
-    MotherImage
+    MotherImage,
+    Kingsman2Image
   ],
   avatars: [
     {author: 'Jacob', image: JacobAvatar},

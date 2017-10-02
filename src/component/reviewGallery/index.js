@@ -71,8 +71,8 @@ class ReviewGallery extends Component {
   }
 
   render() {
-    // filters through movies in db and creates Display Items, putting them into an Array
     let reviews = []
+    // filters through movies in db and creates Display Items, putting them into an Array
     for (var i = 0; i < this.props.movies.length; i++) {
       reviews.push(
         <DisplayReview
