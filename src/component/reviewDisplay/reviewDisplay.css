@@ -15,14 +15,29 @@
   position: relative;
 }
 
-.reviewContent .closeCard {
-  margin-left: 20px !important;
-  padding: 0 !important;
+.reviewMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 40px;
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-bottom: thin solid #2FFAC4;
+  box-shadow: 0 4px 2px -2px grey;
 }
 
-.closeCard div svg {
-  height: 40px !important;
-  width: 40px !important;
+.reviewContent .reviewMenuBttn {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0 !important;
+  margin: 0 15px !important;
+}
+
+.reviewMenuBttn div svg {
+  height: 25px !important;
+  width: 25px !important;
+  color: #D44D97 !important;
 }
 
 .reviewCard.selected {
@@ -52,7 +67,7 @@
   position: absolute;
   z-index: 4 !important;
   width: 100%;
-  margin: 45px auto;
+  margin: 50px auto;
   padding-bottom: 100px;
   box-shadow: none !important;
   transition: 1s ease-in-out;

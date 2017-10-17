@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 import { Card, CardTitle, CardMedia } from 'material-ui/Card'
 import Divider from 'material-ui/Divider'
 import IconButton from 'material-ui/IconButton'
+import Dialog from 'material-ui/Dialog'
 import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
+import Copy from 'copy-to-clipboard'
 
-import Close from 'material-ui/svg-icons/navigation/cancel'
+import Close from 'material-ui/svg-icons/navigation/close'
+import Share from 'material-ui/svg-icons/social/share'
 import AuthorReview from './authorReview'
 import './reviewDisplay.css'
 
@@ -37,10 +40,12 @@ class ReviewDisplay extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selected: false
+      selected: false,
+      copied: false
     }
 
     this.toggleSelect = this.toggleSelect.bind(this)
+    this.copyUrl = this.copyUrl.bind(this)
   }
 
   componentDidMount () {
@@ -54,6 +59,13 @@ class ReviewDisplay extends React.Component {
     if (this.props.review) this.props.onChangeReview('')
   }
 
+  copyUrl () {
+    Copy(window.location.href)
+    this.setState( {copied: true })
+    window.setTimeout( () => {
+      this.setState({ copied: false })
+    }, 3000)
+  }
 
   render() {
     let reviewerSections, reviewClasses;
@@ -63,14 +75,31 @@ class ReviewDisplay extends React.Component {
         <div className='reviewContent'>
           <Divider className='reviewDivider'/>
           <div className='reviewList'>
-            <IconButton
-              onClick={this.toggleSelect}
-              className='closeCard'
-              tooltip='Close Reviews'
-              tooltipPosition='top-right'
-            >
-              <Close/>
-            </IconButton>
+            <div className='reviewMenu'>
+              <Dialog
+                title='Url Copied'
+                modal={false}
+                open={this.state.copied}
+              >
+                Your clipboard now contains a direct link to this page!
+              </Dialog>
+              <IconButton
+                onClick={this.toggleSelect}
+                className='reviewMenuBttn'
+                tooltip='Close Reviews'
+                tooltipPosition='top-center'
+              >
+                <Close/>
+              </IconButton>
+              <IconButton
+                onClick={this.copyUrl}
+                className='reviewMenuBttn'
+                tooltip='Share Link'
+                tooltipPosition='top-center'
+              >
+                <Share />
+              </IconButton>
+            </div>
             {this.props.reviews.submissions.map(review => (
               <AuthorReview
                 avatars={this.props.avatars}

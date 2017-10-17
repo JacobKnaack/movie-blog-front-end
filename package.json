@@ -8,6 +8,7 @@
     "react-scripts": "1.0.10"
   },
   "dependencies": {
+    "copy-to-clipboard": "^3.0.8",
     "history": "^4.7.2",
     "marked": "^0.3.6",
     "material-ui": "^0.18.7",
