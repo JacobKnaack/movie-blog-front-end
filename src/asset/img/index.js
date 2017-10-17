@@ -10,6 +10,7 @@ import NakedImage from './naked.jpg'
 import ItImage from './it.jpg'
 import MotherImage from './mother.png'
 import Kingsman2Image from './kingsman2.jpg'
+import BladeRunnerImage from './blade-runner-2049.png'
 
 export const siteGraphics = {
   HeaderGraphic: WelcomeGraphic,
@@ -24,7 +25,8 @@ const Images = {
     NakedImage,
     ItImage,
     MotherImage,
-    Kingsman2Image
+    Kingsman2Image,
+    BladeRunnerImage
   ],
   avatars: [
     {author: 'Jacob', image: JacobAvatar},
