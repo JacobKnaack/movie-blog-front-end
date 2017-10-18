@@ -64,7 +64,7 @@ class ReviewDisplay extends React.Component {
     this.setState( {copied: true })
     window.setTimeout( () => {
       this.setState({ copied: false })
-    }, 3000)
+    }, 2000)
   }
 
   render() {
