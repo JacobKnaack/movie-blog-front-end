@@ -46,14 +46,15 @@ class ReviewGallery extends Component {
   }
 
   // function that searches review with search string
-  movieSearch (e, reviewArray, searchString) {
+  movieSearch (e, reviewArray) {
     let { name, value } = e.target
     this.setState({ [name]: value })
-    let searchResults = [], lowerName
 
+    let searchResults = [],
+        lowerName
     for (var i = 0; i < reviewArray.length; i ++) {
       lowerName = reviewArray[i].key.toLowerCase()
-      if (lowerName.includes(searchString.toLowerCase())) {
+      if (lowerName.includes(value.toLowerCase())) {
         searchResults.push(reviewArray[i])
       }
     }
@@ -106,7 +107,7 @@ class ReviewGallery extends Component {
             </label>
             <input
               name='search'
-              onChange={ (e) => this.movieSearch(e, reviews, this.state.search) }
+              onChange={ (e) => this.movieSearch(e, reviews) }
               value={this.state.search}
               />
           </div>
