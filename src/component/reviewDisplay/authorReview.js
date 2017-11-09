@@ -56,7 +56,6 @@ class AuthorReview extends React.Component {
     }
   }
 
-// TODO Make this toggle url query when review is selected
   toggleReview () {
     this.setState({ selected: !this.state.selected })
     if( this.props.review === this.props.reviewFromArray.title) {

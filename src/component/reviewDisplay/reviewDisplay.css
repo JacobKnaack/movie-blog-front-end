@@ -100,6 +100,15 @@
 
 .reviewTxt {
   text-align: left;
+  padding: 16px 35px 16px 35px !important;
+}
+
+.reviewTxt h2 {
+  font-family: 'Saira',  sans-serif;
+  font-weight: 400;
+  border-bottom: thin solid #D25196;
+  width: 50%;
+  margin: 30px 0;
 }
 
 .reviewTxt p {
@@ -110,7 +119,9 @@
 p img {
   max-width: 500px;
   max-height: 300px;
-  margin: 10px 10px;
+  margin: 10px 10px 5px 0;
+  padding: 3px;
+  background-color: #31F9C4;
 }
 
 p img:nth-of-type(even) {
@@ -143,7 +154,7 @@ p img:nth-of-type(odd) {
   }
 
   p img {
-    max-width: 350px;
+    max-width: 300px;
     max-height: 200px;
     margin-right: 10px;
     margin-left: 0px;
