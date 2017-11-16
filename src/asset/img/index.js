@@ -13,6 +13,7 @@ import Kingsman2Image from './kingsman2.jpg'
 import BladeRunnerImage from './blade-runner-2049.png'
 import ProfMarstonImage from './prof-marston.jpg'
 import HappyDeathDayImage from './happy-death-day.jpg'
+import ThorRagnarokImage from './thor-ragnarok.jpg'
 
 export const siteGraphics = {
   HeaderGraphic: WelcomeGraphic,
@@ -30,7 +31,8 @@ const Images = {
     Kingsman2Image,
     BladeRunnerImage,
     ProfMarstonImage,
-    HappyDeathDayImage
+    HappyDeathDayImage,
+    ThorRagnarokImage
   ],
   avatars: [
     {author: 'Jacob', image: JacobAvatar},
