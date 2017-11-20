@@ -9,7 +9,7 @@ import Copy from 'copy-to-clipboard'
 
 import Close from 'material-ui/svg-icons/navigation/close'
 import Share from 'material-ui/svg-icons/social/share'
-import AuthorReview from './authorReview'
+import AuthorReview from './AuthorReview'
 import './reviewDisplay.css'
 
 function mapUrlToProps(url, props) {
