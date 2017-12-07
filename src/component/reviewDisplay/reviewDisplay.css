@@ -117,8 +117,8 @@
 }
 
 p img {
-  max-width: 500px;
-  max-height: 300px;
+  max-width: 600px;
+  max-height: 400px;
   margin: 10px 10px 5px 0;
   padding: 3px;
   background-color: #31F9C4;
@@ -154,7 +154,7 @@ p img:nth-of-type(odd) {
   }
 
   p img {
-    max-width: 300px;
+    max-width: 100%;
     max-height: 200px;
     margin-right: 10px;
     margin-left: 0px;
@@ -188,7 +188,7 @@ p img:nth-of-type(odd) {
 
 @media(max-width: 325px) {
   p img {
-    max-width: 280px;
+    max-width: 100%;
     margin: 5px 1px;
   }
 }
