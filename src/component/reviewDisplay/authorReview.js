@@ -1,14 +1,16 @@
-import React from 'react';
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 import PropTypes from 'prop-types'
-import marked from 'marked';
-import { Card, CardHeader, CardText} from 'material-ui/Card';
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
+import marked from 'marked'
+import { Card, CardHeader, CardText} from 'material-ui/Card'
+import Avatar from 'material-ui/Avatar'
+import IconButton from 'material-ui/IconButton'
 import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
 
-import More from 'material-ui/svg-icons/navigation/expand-more';
-import Less from 'material-ui/svg-icons/navigation/expand-less';
-import * as util from '../../lib/util';
+import ImageViewer from './ImageViewer'
+import More from 'material-ui/svg-icons/navigation/expand-more'
+import Less from 'material-ui/svg-icons/navigation/expand-less'
+import * as util from '../../lib/util'
 
 function mapUrlToProps(url, props) {
   return {
@@ -27,7 +29,8 @@ class AuthorReview extends React.Component {
   static propTypes = {
     movie: PropTypes.string,
     review: PropTypes.string,
-    onChangeReview: PropTypes.func
+    onChangeReview: PropTypes.func,
+    reviewFromArray: PropTypes.object,
   }
 
   static defaultProps = {
@@ -39,7 +42,7 @@ class AuthorReview extends React.Component {
     super(props)
     this.state = {
       selected: false,
-      avatar: ''
+      avatar: '',
     }
 
     this.toggleReview = this.toggleReview.bind(this)
@@ -63,7 +66,27 @@ class AuthorReview extends React.Component {
     } else this.props.onChangeReview(this.props.reviewFromArray.title)
   };
 
+  formatHtml (html) {
+    let imgArray = html.match(/<img[^>]+([>])/g)
+
+    if (imgArray) {
+      for (var i = 0; i < imgArray.length; i ++) {
+
+        let temp = imgArray[i].split(' ')
+        let regex = new RegExp(`<img[^>]+${temp[1]}([^>]+)>`)
+        let image = ReactDOMServer.renderToStaticMarkup(<ImageViewer imgSrc={temp[1].substring(5).slice(0, -1)} alt='test'/>)
+
+        html = html.replace(regex, image)
+      }
+    }
+
+    return html
+  }
+
+
+
   render () {
+    let formattedHtml = this.formatHtml(marked(this.props.reviewFromArray.markdown))
     let cardClasses = 'reviewContainer'
     if (this.state.selected) cardClasses += ' selected'
 
@@ -100,7 +123,7 @@ class AuthorReview extends React.Component {
           <div>
             <CardText
               className='reviewTxt'
-              dangerouslySetInnerHTML={{__html: marked(this.props.reviewFromArray.markdown)}}
+              dangerouslySetInnerHTML={{__html: formattedHtml}}
             />
             <IconButton
               onClick={this.toggleReview}

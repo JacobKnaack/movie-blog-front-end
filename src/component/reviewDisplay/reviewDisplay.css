@@ -112,26 +112,29 @@
 }
 
 .reviewTxt p {
-  font-size: 17px !important;
-  line-height: 25px !important;
+  font-size: 17px;
+  line-height: 25px;
 }
 
-p img {
-  max-width: 600px;
-  max-height: 400px;
-  margin: 10px 10px 5px 0;
-  padding: 3px;
-  background-color: #31F9C4;
+.imageViewer {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 5px;
+  background-color: #08F7BA;
 }
 
-p img:nth-of-type(even) {
-  float: right;
-  clear: right;
-}
-
-p img:nth-of-type(odd) {
+.reviewImg {
+  position: relative;
+  width: 100%;
+  margin: 5px 0;
+  margin-left: 50%;
+  left: -50%;
   float: left;
-  clear: left;
+}
+
+.reviewImg-credit {
+  font-size: 75% !important;
+  line-height: 20px !important;
 }
 
 @media(max-width: 800px) {
@@ -151,13 +154,6 @@ p img:nth-of-type(odd) {
 
   .movieTitle span {
     font-size: 20px !important;
-  }
-
-  p img {
-    max-width: 100%;
-    max-height: 200px;
-    margin-right: 10px;
-    margin-left: 0px;
   }
 }
 
@@ -187,8 +183,7 @@ p img:nth-of-type(odd) {
 }
 
 @media(max-width: 325px) {
-  p img {
-    max-width: 100%;
+  .reviewImg {
     margin: 5px 1px;
   }
 }
