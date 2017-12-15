@@ -72,18 +72,25 @@ class AuthorReview extends React.Component {
     if (imgArray) {
       for (var i = 0; i < imgArray.length; i ++) {
 
-        let temp = imgArray[i].split(' ')
-        let regex = new RegExp(`<img[^>]+${temp[1]}([^>]+)>`)
-        let image = ReactDOMServer.renderToStaticMarkup(<ImageViewer imgSrc={temp[1].substring(5).slice(0, -1)} alt='test'/>)
+        let temp = imgArray[i].split(' '),
+            captionArray = [],
+            captionText = '',
+            regex = new RegExp(`<img[^>]+${temp[1]}([^>]+)>`)
 
+        for (var j = 0; j < temp.length; j++) {
+          if (j > 1) {
+            captionArray.push(temp[j])
+          }
+        }
+        captionText = captionArray.join(' ').substring(5).slice(0, -2)
+
+        const image = ReactDOMServer.renderToStaticMarkup(<ImageViewer imgSrc={temp[1].substring(5).slice(0, -1)} alt={captionText}/>)
         html = html.replace(regex, image)
       }
     }
 
     return html
   }
-
-
 
   render () {
     let formattedHtml = this.formatHtml(marked(this.props.reviewFromArray.markdown))

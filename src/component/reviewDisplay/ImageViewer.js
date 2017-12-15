@@ -10,7 +10,7 @@ const ImageViewer = ({ imgSrc, alt }) => {
         alt={alt}
       />
       <p className='reviewImg-credit'><span>Image Credit:</span> {imgSrc}</p>
-      <p className='reviewImg-description'>{alt}</p>
+      <p className='reviewImg-description'><em>{alt}</em></p>
     </div>
   )
 

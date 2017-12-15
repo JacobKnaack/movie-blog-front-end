@@ -112,15 +112,15 @@
 }
 
 .reviewTxt p {
-  font-size: 17px;
-  line-height: 25px;
+  font-size: 18px;
+  line-height: 27px;
 }
 
 .imageViewer {
   width: 90%;
   margin: 0 auto;
   padding: 0 5px;
-  background-color: #08F7BA;
+  background-color: #E1E2E5;
 }
 
 .reviewImg {
@@ -135,6 +135,10 @@
 .reviewImg-credit {
   font-size: 75% !important;
   line-height: 20px !important;
+}
+
+.reviewImg-description {
+  text-align: center;
 }
 
 @media(max-width: 800px) {
