@@ -116,17 +116,24 @@
   line-height: 27px;
 }
 
+.reviewTxt a {
+  text-decoration: none;
+  color: #d74898;
+}
+
 .imageViewer {
-  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 5px;
   background-color: #E1E2E5;
+  border-radius: 0 0 5px 5px;
 }
 
 .reviewImg {
   position: relative;
   width: 100%;
-  margin: 5px 0;
   margin-left: 50%;
   left: -50%;
   float: left;
@@ -135,10 +142,19 @@
 .reviewImg-credit {
   font-size: 75% !important;
   line-height: 20px !important;
+  margin: 2px 5px;
+  overflow: auto;
+}
+
+.reviewImg-credit span {
+  color: #32F8C3;
+  text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
 }
 
 .reviewImg-description {
   text-align: center;
+  color: #2f4f4f;
+  text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
 }
 
 @media(max-width: 800px) {
