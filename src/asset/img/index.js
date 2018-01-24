@@ -19,6 +19,7 @@ import MurderOnTheOrientImage from './murder-on-the-orient.jpg'
 import DisasterArtistImage from './disaster-artist.jpg'
 import LadyBirdImage from './lady-bird.jpg'
 import LastJediImage from './star-wars-the-last-jedi.jpg'
+import ShapeOfWaterImage from './the-shape-of-water.jpg'
 
 export const siteGraphics = {
   HeaderGraphic: WelcomeGraphic,
@@ -42,7 +43,8 @@ const Images = {
     MurderOnTheOrientImage,
     DisasterArtistImage,
     LadyBirdImage,
-    LastJediImage
+    LastJediImage,
+    ShapeOfWaterImage
   ],
   avatars: [
     {author: 'Jacob', image: JacobAvatar},
