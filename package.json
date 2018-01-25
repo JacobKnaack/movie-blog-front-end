@@ -10,12 +10,11 @@
   "dependencies": {
     "copy-to-clipboard": "^3.0.8",
     "history": "^4.7.2",
-    "marked": "^0.3.6",
+    "marked": "^0.3.12",
     "material-ui": "^0.18.7",
     "prop-types": "^15.6.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
-    "react-markdown": "^3.1.1",
     "react-redux": "^5.0.6",
     "react-tap-event-plugin": "^2.0.1",
     "react-url-query": "^1.2.0",
