@@ -44,8 +44,8 @@ class ReviewGallery extends Component {
     this.movieSearch = this.movieSearch.bind(this);
     this.selectMovie = this.selectMovie.bind(this);
   }
-
-  // function that searches review with search string
+  
+  // Searches a the list of reviews with the value in the search input, occurs on input change
   movieSearch (e, reviewArray) {
     let { name, value } = e.target
     this.setState({ [name]: value })

@@ -20,6 +20,8 @@ import DisasterArtistImage from './disaster-artist.jpg'
 import LadyBirdImage from './lady-bird.jpg'
 import LastJediImage from './star-wars-the-last-jedi.jpg'
 import ShapeOfWaterImage from './the-shape-of-water.jpg'
+import CocoImage from './coco.jpg'
+import Paddington2Image from './paddington-2.jpg'
 
 export const siteGraphics = {
   HeaderGraphic: WelcomeGraphic,
@@ -44,7 +46,9 @@ const Images = {
     DisasterArtistImage,
     LadyBirdImage,
     LastJediImage,
-    ShapeOfWaterImage
+    ShapeOfWaterImage,
+    CocoImage,
+    Paddington2Image
   ],
   avatars: [
     {author: 'Jacob', image: JacobAvatar},
