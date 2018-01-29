@@ -22,6 +22,7 @@ import LastJediImage from './star-wars-the-last-jedi.jpg'
 import ShapeOfWaterImage from './the-shape-of-water.jpg'
 import CocoImage from './coco.jpg'
 import Paddington2Image from './paddington-2.jpg'
+import ITonyaImage from './i-tonya.jpg'
 
 export const siteGraphics = {
   HeaderGraphic: WelcomeGraphic,
@@ -48,7 +49,8 @@ const Images = {
     LastJediImage,
     ShapeOfWaterImage,
     CocoImage,
-    Paddington2Image
+    Paddington2Image,
+    ITonyaImage
   ],
   avatars: [
     {author: 'Jacob', image: JacobAvatar},

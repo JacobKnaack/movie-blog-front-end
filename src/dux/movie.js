@@ -1,4 +1,4 @@
-const baseUrl = process.env.REACT_APP_API_URL
+const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000'
 
 //constants
 export const MOVIES_LOAD = 'MOVIES_LOAD'
