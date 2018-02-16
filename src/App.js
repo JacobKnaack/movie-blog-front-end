@@ -23,8 +23,6 @@ class App extends Component {
         <div className="App">
           <main id='homeContainer'>
             <div id='heading'>
-              {/* <img id='welcomeImg' src={images.HeaderGraphic} alt='Sick Flick Nit Pickers watching flicks'/> */}
-              {/* <h1 id='mainHeading'>Sick Flick Nit Pickers</h1> */}
               <img id='logoImg' src={siteGraphics.Logo} alt='SFNP logo' />
               <h4 id='mainSubtitle'>Movie Reviews</h4>
             </div>
@@ -32,6 +30,7 @@ class App extends Component {
               <ReviewGallery
                 movies={data.movies}
                 reviews={data.reviews}
+                movieImgs={data.images}
                 images={images}
               />
             </section>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import {connect} from 'react-redux'
-// import {fetchMovies} from '../../reducers/movie'
+import {connect} from 'react-redux'
+import {fetchImage} from '../../dux/images'
 import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
 
 import DisplayReview from '../reviewDisplay'
@@ -81,6 +81,7 @@ class ReviewGallery extends Component {
           selectMovie={this.selectMovie}
           reviews={this.props.reviews[i]}
           movieFromArray={this.props.movies[i]}
+          movieImg={util.findMovieImage(this.props.movieImgs, this.props.movies[i].id)}
           image={this.props.images.reviewImages[i]}
           avatars={this.props.images.avatars}
         />
@@ -96,7 +97,10 @@ class ReviewGallery extends Component {
       reviews = [reviews.find(name => {
         return name.key === this.props.movie
       })]
+    } else {
+      util.sortMoviesByReleaseDate(reviews)
     }
+
 
     return (
       <div className='movie-list'>
@@ -119,9 +123,10 @@ class ReviewGallery extends Component {
   }
 }
 
-// turns review gallery into a higher order component for
-export default addUrlProps({ mapUrlToProps, mapUrlChangeHandlersToProps })(ReviewGallery);
-// export default connect(
-//   (state) => ({movies: state.movies})
-//   {fetchMovies}
-// )(ReviewGallery)
+export default addUrlProps({ mapUrlToProps, mapUrlChangeHandlersToProps })(ReviewGallery)
+
+// connecting component to redux store
+export const reviewImages = connect(
+  (state) => ({images: state.images}),
+  {fetchImage}
+)(ReviewGallery)
