@@ -82,7 +82,6 @@ class ReviewGallery extends Component {
           reviews={this.props.reviews[i]}
           movieFromArray={this.props.movies[i]}
           movieImg={util.findMovieImage(this.props.movieImgs, this.props.movies[i].id)}
-          image={this.props.images.reviewImages[i]}
           avatars={this.props.images.avatars}
         />
       )

@@ -7,7 +7,7 @@ import Dialog from 'material-ui/Dialog'
 import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
 import Copy from 'copy-to-clipboard'
 
-import { requestMovieImage } from '../../lib/aws'
+import { formatPublicImageUrl } from '../../lib/aws'
 import Close from 'material-ui/svg-icons/navigation/close'
 import Share from 'material-ui/svg-icons/social/share'
 import AuthorReview from './AuthorReview'
@@ -122,8 +122,7 @@ class ReviewDisplay extends React.Component {
       <Card className={reviewClasses}>
         <div onClick={this.toggleSelect}>
           <CardMedia className='titleImage'>
-            <img src={this.props.image} alt=''/>
-            {/* <img src={requestMovieImage(this.props.movieImg)} alt={this.props.movieImg} /> */}
+            <img src={formatPublicImageUrl(this.props.movieImg)} alt={this.props.movieImg} />
           </CardMedia>
           <CardTitle
             className='movieTitle'
