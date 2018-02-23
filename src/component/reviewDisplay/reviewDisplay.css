@@ -111,6 +111,13 @@
   margin: 30px 0;
 }
 
+.reviewTxt h3 {
+  font-family: 'Saira',  sans-serif;
+  font-weight: 400;
+  text-align: center;
+  background-color: #FF5E56;
+}
+
 .reviewTxt p {
   font-size: 18px;
   line-height: 27px;
