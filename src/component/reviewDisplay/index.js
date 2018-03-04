@@ -42,7 +42,7 @@ class ReviewDisplay extends React.Component {
     super(props)
     this.state = {
       selected: false,
-      copied: false
+      shareClicked: false
     }
 
     this.toggleSelect = this.toggleSelect.bind(this)
@@ -62,9 +62,9 @@ class ReviewDisplay extends React.Component {
 
   copyUrl () {
     Copy(window.location.href)
-    this.setState( {copied: true })
+    this.setState( {shareClicked: true })
     window.setTimeout( () => {
-      this.setState({ copied: false })
+      this.setState({ shareClicked: false })
     }, 2000)
   }
 
@@ -80,7 +80,7 @@ class ReviewDisplay extends React.Component {
               <Dialog
                 title='Url Copied'
                 modal={false}
-                open={this.state.copied}
+                open={this.state.shareClicked}
               >
                 Your clipboard now contains a direct link to this page!
               </Dialog>

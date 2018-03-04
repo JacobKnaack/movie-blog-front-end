@@ -119,6 +119,30 @@
   background-color: #FF5E56;
 }
 
+.reviewTxt h4 {
+  position: relative;
+  width: 40%;
+  font-family: 'Ultra', serif;
+  font-size: 120%;
+  font-weight: 100;
+  margin-left: 50px;
+  border-bottom: thin solid #32F8C3;
+}
+
+.reviewTxt h4:before {
+  content: "\f091";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  left: -40px;
+  top: 0;
+}
+
+.reviewTxt h5 {
+  font-family: 'Saira', sans-serif;
+  font-size: 120%;
+  margin: 5px auto;
+}
+
 .reviewTxt p {
   font-size: 18px;
   line-height: 27px;
