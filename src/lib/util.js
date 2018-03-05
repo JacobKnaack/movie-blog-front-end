@@ -10,8 +10,24 @@ export const sortMoviesByReleaseDate = (movieArray) => {
   })
 }
 
-export const findMovieImage = (imgArray, movieId) => {
+export const findMovieImage = (imgArray, id) => {
   for (var img in imgArray) {
-    if (imgArray[img].movieId === movieId) return imgArray[img].imageName
+    if (imgArray[img].movieId === id) return imgArray[img].imageName
+  }
+}
+
+export const findFeatureImage = (imgArray, id) => {
+  for (var img in imgArray) {
+    if (imgArray[img].featureId === id) {
+      return imgArray[img].imageName
+    }
+  }
+}
+
+export const findArticleById = (articleArray, id) => {
+  for (var article in articleArray) {
+    if (articleArray[article].featureId === id) {
+      return articleArray[article]
+    }
   }
 }

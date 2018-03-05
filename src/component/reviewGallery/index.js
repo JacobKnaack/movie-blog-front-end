@@ -27,7 +27,7 @@ class ReviewGallery extends Component {
     movie: PropTypes.string,
     review: PropTypes.string,
     onChangeMovie: PropTypes.func,
-    onCHangeReview: PropTypes.func
+    onChangeReview: PropTypes.func
   }
 
   static defaultProps = {

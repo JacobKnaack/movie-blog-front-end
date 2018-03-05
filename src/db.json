@@ -1,17 +1,23 @@
 {
   "features": [
     {
-      "id": "1",
-      "name": "The Acadademy Awards",
+      "id": 1,
+      "name": "The 2018 Academy Awards",
       "release": "March 4, 2018"
 
     }
   ],
   "featureArticles": [
     {
-      "featureId": "1",
+      "featureId": 1,
       "title": "2018 Oscar Nominated Films",
-      "markdown": "## A Sickflicks Guess and Hope,"
+      "markdown": "## A Sickflicks Guess and Hope\n\n There’s never been a more movie-ridden year in our lives. Seriously. Never before have we hit the theater with such vigor, such ferocity, such unbridled frequency as this Sickflicks crew has been at it this past year (shoutout Moviepass).\n\n In 2018, cinema feels like it’s approaching a new horizon for consumerability. Combined with the optimistic belief that film is ever improving, access to inexpensive tools/techniques/equipment is putting filmmaking toolkits into the hands of billions, and services providing film/television are expanding and becoming insanely convenient.\n\n It’s truly wonderful. There’s more high-quality films, and with Sickflicks, Megan, Jacob, and e-vaughn have been going on a mission to understand what they individually and collaboratively love about the films they screen.\n\n As the Oscars approached during the last 3 months, Sickflicks has aimed to see every single Best Picture nominee, and hope to tackle a menagerie of other flicks to prepare for our predictions article.\n\n ## Best Picture\n\n"
+    }
+  ],
+  "featureImages": [
+    {
+      "featureId": 1,
+      "imageName": "oscars-2018-image.jpg"
     }
   ],
   "movies": [
@@ -528,7 +534,7 @@
       ]
     }
   ],
-  "images": [
+  "movieImages": [
     {
       "movieId": 1,
       "imageName": "ValerianImage.jpg"

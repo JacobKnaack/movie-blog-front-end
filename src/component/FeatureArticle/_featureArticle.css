@@ -1,0 +1,50 @@
+.articleHead {
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.articleHead img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.articleHead h2 {
+  position: absolute;
+  width: calc(100% - 50px);
+  height: 75px;
+  line-height: 75px;
+  color: #32F8C3;
+  text-align: left;
+  padding-left: 50px;
+  top: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: 'Ultra', serif;
+  font-size: 250%;
+}
+
+.articleHead h3 {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  top: 250px;
+  font-family: 'Libre Barcode 39 Text', sans-serif;
+  font-size: 300%;
+  color: #D25196;  
+}
+
+.authors {
+  position: absolute;
+  top: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.authors h3 {
+  font-family: 'Saira', sans-serif;
+  color: #a9a9a9;
+}

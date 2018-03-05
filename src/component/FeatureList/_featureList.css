@@ -1,0 +1,14 @@
+.featureList {
+  margin-bottom: 30px;
+}
+
+.featureList .featureHeader {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  font-family: 'Saira', sans-serif;
+  font-size: 200%;
+  color: #D25196;
+  text-align: left;
+  margin-left: 5%;
+}

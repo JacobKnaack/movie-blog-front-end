@@ -7,7 +7,7 @@ import Avatar from 'material-ui/Avatar'
 import IconButton from 'material-ui/IconButton'
 import { decode, encode, addUrlProps, UrlQueryParamTypes, replaceInUrlQuery } from 'react-url-query'
 
-import ImageViewer from './ImageViewer'
+import ImageViewer from '../ImageViewer'
 import More from 'material-ui/svg-icons/navigation/expand-more'
 import Less from 'material-ui/svg-icons/navigation/expand-less'
 import * as util from '../../lib/util'

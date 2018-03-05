@@ -39,6 +39,7 @@
 }
 
 .reviewCard.selected {
+  margin-top: 20px;
   height: auto;
   width: 800px;
   z-index: 2 !important;
