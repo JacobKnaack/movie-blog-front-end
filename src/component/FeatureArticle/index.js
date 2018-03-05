@@ -74,7 +74,7 @@ class FeatureArticle extends React.Component {
 
 
         <div 
-          className='content'
+          className='featureContent'
           dangerouslySetInnerHTML={{__html: formattedHtml}} 
         />
 
