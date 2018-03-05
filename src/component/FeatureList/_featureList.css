@@ -1,14 +1,19 @@
 .featureList {
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
-.featureList .featureHeader {
-  margin: 0;
-  height: 50px;
-  line-height: 50px;
-  font-family: 'Saira', sans-serif;
+.featureScroll {
+  position: relative;
+}
+
+.featureScroll .scrollHeading {
+  font-family: 'Libre Barcode 39 Text', sans-serif;
+  color: #01FFC4;
+  position: absolute;
   font-size: 200%;
-  color: #D25196;
-  text-align: left;
-  margin-left: 5%;
+  padding-left: 20px;
+  top: 0;
+  left: 5%;
+  z-index: 102;
 }

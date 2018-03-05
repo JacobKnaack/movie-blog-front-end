@@ -74,8 +74,8 @@ class FeatureList extends React.Component {
 
     return(
       <div className='featureList'>
-        <h2 className='featureHeader'>Sick Flicks Featured Articles</h2>
         <div className='featureScroll'>
+          <h2 className='scrollHeading'>Featured Articles</h2>
           {featureCards}        
         </div>
       </div>

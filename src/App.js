@@ -37,7 +37,7 @@ class App extends Component {
             </div>
           )}
           <Switch>
-            <Route path='/feature/:articleId'>
+            <Route path='/feature/:articleUrl'>
               <FeatureArticle
                 article={
                   util.findArticleById(
