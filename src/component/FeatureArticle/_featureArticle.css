@@ -106,17 +106,17 @@
 }
 
 .featureContent #e-vaughn {
-  margin-top: 50px;
+  margin-top: 65px;
   background-image: url('../../asset/img/ivan-avatar.svg');
 }
 
 .featureContent #jacob {
-  margin-top: 125px;
+  margin-top: 140px;
   background-image: url('../../asset/img/jacob-avatar.svg');
 }
 
 .featureContent #megan {
-  margin-top: 125px;
+  margin-top: 140px;
   background-image: url('../../asset/img/megan-avatar.svg');
 }
 
@@ -170,4 +170,30 @@
 .featureContent .imageViewer {
   width: 80%;
   margin-bottom: 100px;
+}
+
+@media (max-width: 800px) {
+  .featureArticle {
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .featureContent h4 {
+    width: 75%;
+    clear: both;
+  }
+
+  .featureContent h5 {
+    margin: 25px 25px;
+  }
+
+  .featureContent .imageViewer {
+    width: 100%;
+  }
+
+  .featureContent p {
+    margin: 25px 25px;
+  }
 }

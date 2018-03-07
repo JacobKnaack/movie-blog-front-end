@@ -175,7 +175,7 @@
 .reviewImg-credit {
   font-size: 75% !important;
   line-height: 20px !important;
-  margin: 2px 5px;
+  margin: 2px 5px !important;
   overflow: auto;
 }
 
