@@ -104,6 +104,7 @@
   padding-left: 80px;
   color: #a9a9a9;
   float: left;
+  clear: both;
 }
 
 .featureContent #e-vaughn {
@@ -129,6 +130,7 @@
   margin: 100px auto 50px auto;
   display: inline-block;
   font-size: 250%;
+  clear: both;
 }
 
 .featureContent h3 {
